@@ -1,5 +1,6 @@
 <?php
-
+  // xml2web
+  // author: SOMJEET DASGUPTA .  3/6/2016
   //constants
   $FORMAT_XML   = 'description.xml';
   $FORM_HANDLER = 'form_processor.php';
@@ -75,7 +76,7 @@
         $attr = $dom->createAttribute('value');   //get the value of the radio button for each $val
         $attr->value = trim($val);
         $input->appendChild($attr);
-        
+
         $form->appendChild($input);               //append each and every radio input button
         $label =  $dom->createElement('label', ($val));
         $form->appendChild($label);
