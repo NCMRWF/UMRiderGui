@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+
+<title> ALL FIELDS NECCESSARY </title>
+
+<objects>
+
+  <object>
+    <label> UMType1 </label>
+    <description> This is description </description>
+    <inputType> radio </inputType>
+    <validVals>
+      <validVal> regional </validVal>
+      <validVal> global </validVal>
+      <validVal> ensemble </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType2 </label>
+    <description> This is description2 </description>
+    <inputType> text </inputType>
+    <validVals>
+      <validVal> onscript </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType3 </label>
+    <description> This is description </description>
+    <inputType> select </inputType>
+    <validVals>
+      <validVal> regional </validVal>
+      <validVal> global </validVal>
+      <validVal> ensemble </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType4 </label>
+    <description> This is description </description>
+    <inputType> checkbox </inputType>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType5 </label>
+    <description> This is description </description>
+    <inputType> select </inputType>
+    <validVals>
+      <validVal> regional1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble3 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+</objects>
+
+</form>
