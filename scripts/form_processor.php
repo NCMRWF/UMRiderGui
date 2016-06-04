@@ -1,4 +1,7 @@
 <?php
+
+// script to process the form and generate the cfg file as intended
+
 $i = 0;
 $filewrite = "";
 while(list($name, $value) = each($_POST) ){
