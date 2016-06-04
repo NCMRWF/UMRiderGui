@@ -34,6 +34,8 @@
 
   foreach($xml->objects->children() as $object){
 
+    // write these below 2 to a file --- option1
+    // make the for reading dynamic for the form_processor.php --- option2
     $ob_label = trim($object->label);           //object label
     $ob_type = trim($object->inputType);        //object type
 
@@ -89,7 +91,8 @@
       $select = $dom->createElement('select');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
-      $input->appendChild($attr);
+      $select->appendChild($attr);
+
       foreach($values->children() as $val){
         //echo $val." ";
         $option = $dom->createElement('option', trim($val));
@@ -107,18 +110,23 @@
       $values = $object->validVals;
       foreach($values->children() as $val){
           $input = $dom->createElement('input');
+
           $attr  = $dom->createAttribute('type');
           $attr->value = $ob_type;
           $input->appendChild($attr);
+
           $attr  = $dom->createAttribute('name');
-          $attr->value = $ob_label.'[]';
-          $input->appendChild($attr);
-          $attr = $dom->createElement('value');
-          $attr->value = trim($val);
+          $attr->value = trim($ob_label).'[]';
+          //echo $attr->value;
           $input->appendChild($attr);
 
+          $attr = $dom->createAttribute('value');
+          $attr->value = trim($val);
+          $input->appendChild($attr);
+          //echo $attr->value;
+
           $form->appendChild($input);
-          $label =  $dom->createElement('label', ($val));
+          $label =  $dom->createElement('label', trim($val));
           $form->appendChild($label);
           $form->appendChild($dom->createElement('br')); // line breaker
       }
