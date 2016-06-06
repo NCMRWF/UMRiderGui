@@ -4,21 +4,6 @@ $filewrite = "";
 $cfgfile = fopen("setup.cfg", "w");
 while(list($name, $value) = each($_POST) ){
 
-  /*
-  echo $name."</br>";
-  if(is_array($name)){
-    foreach($name as $var){
-      echo $var.' ';
-    }
-  }
-  if(is_array($value)){
-    foreach($_POST[$name] as $var){
-      echo $var.' ';
-    }
-    echo '<br>';
-  }
-  */
-
   //echo "$i<br>"; $i++;
   $filewrite .= $name.' = ';
   //fwrite($cfgfile, $filewrite);
