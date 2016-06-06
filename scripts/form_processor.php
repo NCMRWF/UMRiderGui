@@ -8,12 +8,12 @@ while(list($name, $value) = each($_POST) ){
   $filewrite .= $name.' = ';
   //fwrite($cfgfile, $filewrite);
   if(is_array($value)){
-    $val = '(';
+    $val = '[';
     foreach($value as $var){
-      $val .= $var.',';
+      $val .= "'$var'".',';
     }
     $val = rtrim($val, ',');
-    $val .= ')';
+    $val .= ']';
 
     $filewrite .= $val;
     //fwrite($cfgfile, $filewrite);
