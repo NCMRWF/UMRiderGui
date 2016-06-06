@@ -68,6 +68,20 @@
     <comment> This is a comment string </comment>
   </object>
 
+  <object>
+    <label> UMType6 </label>
+    <description> This is description </description>
+    <inputType> checkbox </inputType>
+    <validVals>
+      <validVal> val1 </validVal>
+      <validVal> valu2 </validVal>
+      <validVal> val3 </validVal>
+      <validVal> valu4 </validVal>
+      <validVal> val5 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
 </objects>
 
 </form>
