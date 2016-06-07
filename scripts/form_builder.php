@@ -263,11 +263,42 @@
       }
     }
 
+    else if($ob_type == 'date'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = $ob_type;
+      $input->appendChild($attr);
+
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+
+  /*
+    else if($ob_type == 'float'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'text';
+      $input->appendChild($attr);
+
+      $attr = $dom->createAttribute('onsubmit');
+      $attr->value = 'float_check()';
+      $input->appendChild($attr);
+
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+*/
+
 
 
     $form->appendChild($dom->createElement('br')); // line breaker
     $form->appendChild($dom->createElement('br')); // line breaker
-
   }
 
   $form->appendChild($dom->createElement('hr')); //form horizontal ruler
