@@ -9,6 +9,7 @@
   $FORMAT_XML   = 'description.xml';
   $FORM_HANDLER = 'form_processor.php';
   $FORM_HEADER  = 'ALL FIELDS NECCESSARY';
+  $VALIDATOR_JS = 'validator.js';
   //=========================================================================//
   //styling constants
   $HEADER_FONT_LINK =  'https://fonts.googleapis.com/css?family=Titillium+Web:300';
@@ -39,7 +40,17 @@
 
 
   //=========================================================================//
-  //style for the form page
+  //linking the doc to the validator JAVASCRIPT script
+  $script = $dom->createElement('script', ' ');
+  $attr = $dom->createAttribute('src');
+  $attr->value = $VALIDATOR_JS;
+  $script->appendChild($attr);
+  $dom->appendChild($script);
+  //=========================================================================//
+
+
+  //=========================================================================//
+  //style for the form page   CSS --
 
   //linking the fonts
   //<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> h4
@@ -135,6 +146,7 @@
   //=========================================================================//
 
 
+
   //=========================================================================//
 
   //form header in h2
@@ -158,7 +170,8 @@
   $dom->appendChild($form);                             //append the form to dom right here.
 
 
-
+  //=========================================================================//
+  //PARSING AND ADDING THE OBJECTS BELOW
 
   foreach($xml->objects->children() as $object){
     $form->appendChild($dom->createElement('hr')); //form horizontal ruler
@@ -167,7 +180,9 @@
     // make the for reading dynamic for the form_processor.php --- option2
     $ob_label = trim($object->label);             //object label
     $ob_type = trim($object->inputType);          //object type
-
+    if(trim($object->script) != '' || trim($object->script) != NULL){
+      $ob_script = ($object->script).'(this)';    //object script function if any
+    }
 
     $label = $dom->createElement('h4', $ob_label." : ");    //object labels in h4
     $form->appendChild($label);
@@ -188,7 +203,13 @@
       $attr = $dom->createAttribute('placeholder');
       $attr->value = $ob_label;                 //label is specified in the xml file, becomes identity name && field description
       $input->appendChild($attr);
-      //end input tag code
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
+
+
       $form->appendChild($input);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
@@ -208,6 +229,7 @@
         $attr = $dom->createAttribute('value');          //get the value of the radio button for each $val
         $attr->value = trim($val);
         $input->appendChild($attr);
+
 
         $form->appendChild($input);                      //append each and every radio input button
         $label =  $dom->createElement('label', ($val));  //option text as label
@@ -271,35 +293,22 @@
       $attr = $dom->createAttribute('type');
       $attr->value = $ob_type;
       $input->appendChild($attr);
-
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
       $form->appendChild($input);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
 
-  /*
-    else if($ob_type == 'float'){
-      $input = $dom->createElement('input');
-      $attr = $dom->createAttribute('name');
-      $attr->value = $ob_label;
-      $input->appendChild($attr);
-      $attr = $dom->createAttribute('type');
-      $attr->value = 'text';
-      $input->appendChild($attr);
-
-      $attr = $dom->createAttribute('onsubmit');
-      $attr->value = 'float_check()';
-      $input->appendChild($attr);
-
-      $form->appendChild($input);               //append select input button
-      $form->appendChild($dom->createElement('br')); // line breaker
-    }
-*/
-
-
 
     $form->appendChild($dom->createElement('br')); // line breaker
     $form->appendChild($dom->createElement('br')); // line breaker
+
   }
+
+
 
   $form->appendChild($dom->createElement('hr')); //form horizontal ruler
 
