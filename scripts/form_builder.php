@@ -137,10 +137,14 @@
   */
 
   $css_text = "h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif;}
+
                h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
+
                label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
                select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
                em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+               date{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+               number{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
                //div{width: 450px;}
                /*
                div{background: -webkit-linear-gradient(left, white , grey); /* For Safari 5.1 to 6.0 */
@@ -305,6 +309,9 @@
       $attr = $dom->createAttribute('type');
       $attr->value = $ob_type;
       $input->appendChild($attr);
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
         $attr->value = $ob_script;
@@ -324,6 +331,9 @@
       $input->appendChild($attr);
       $attr = $dom->createAttribute('min');
       $attr->value = '0';
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -349,6 +359,9 @@
       $attr->value = trim(($val);
       $input->appendChild($attr);
       */
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
         $attr->value = $ob_script;
@@ -368,6 +381,9 @@
       $input->appendChild($attr);
       $attr = $dom->createAttribute('step');
       $attr->value = '0.000001';  //supports upto 6 decimal places
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
