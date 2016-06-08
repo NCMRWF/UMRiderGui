@@ -231,7 +231,7 @@
       $form->appendChild($dom->createElement('br')); // line breaker
     }
 
-
+    //==================================//
     else if($ob_type == 'radio'){                         // radio type handler
       $values = $object->validVals;
       foreach($values->children() as $val){
@@ -253,7 +253,7 @@
         $form->appendChild($dom->createElement('br'));   // line breaker
       }
     }
-
+    //==================================//
     else if($ob_type == 'select'){
       $values = $object->validVals;
       $select = $dom->createElement('select');
@@ -274,7 +274,7 @@
       $form->appendChild($select);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
-
+    //==================================//
     else if($ob_type == 'checkbox'){
       $values = $object->validVals;
       foreach($values->children() as $val){
@@ -300,7 +300,7 @@
           $form->appendChild($dom->createElement('br')); // line breaker
       }
     }
-
+    //==================================//
     else if($ob_type == 'date'){
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
@@ -320,8 +320,8 @@
       $form->appendChild($input);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
-
-    else if($ob_type == 'pinteger'){
+    //==================================//
+    else if($ob_type == 'pinteger'){            //render positive only integers
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -343,8 +343,8 @@
       $form->appendChild($input);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
-
-    else if($ob_type == 'integer'){
+    //==================================//
+    else if($ob_type == 'integer'){             // render integer types -ve or +ve
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -370,9 +370,9 @@
       $form->appendChild($input);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
-
+    //==================================//
     else if($ob_type == 'float' || $ob_type == 'number'){
-      $input = $dom->createElement('input');
+      $input = $dom->createElement('input');          //render float/ decimal values upto 6 decimal places
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
       $input->appendChild($attr);
@@ -393,7 +393,7 @@
       $form->appendChild($input);               //append select input button
       $form->appendChild($dom->createElement('br')); // line breaker
     }
-
+    //==================================//
     else if($ob_type == 'boolean'){
       $values = array('True', 'False');
       foreach($values as $val){
