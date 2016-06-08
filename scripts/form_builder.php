@@ -140,11 +140,15 @@
                h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
                label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
                select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}/*
-               *{background: -webkit-linear-gradient(left, white , grey); /* For Safari 5.1 to 6.0 */
+               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+               //div{width: 450px;}
+               /*
+               div{background: -webkit-linear-gradient(left, white , grey); /* For Safari 5.1 to 6.0 */
                background: -o-linear-gradient(right, white, grey); /* For Opera 11.1 to 12.0 */
                background: -moz-linear-gradient(right, white, grey); /* For Firefox 3.6 to 15 */
-             background: linear-gradient(to right, white , grey); /* Standard syntax (must be last)*/}*/ ";
+               background: linear-gradient(to right, white , grey); /* Standard syntax (must be last)*/}
+               */
+               ";
 
   $style = $dom->createElement('style', $css_text);
   $dom->appendChild($style);
