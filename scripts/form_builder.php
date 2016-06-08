@@ -349,7 +349,7 @@
       $form->appendChild($dom->createElement('br')); // line breaker
     }
 
-    else if($ob_type == 'float'){
+    else if($ob_type == 'float' || $ob_type == 'number'){
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -370,23 +370,25 @@
     }
 
     else if($ob_type == 'boolean'){
-      $input = $dom->createElement('input');
-      $attr = $dom->createAttribute('name');
-      $attr->value = $ob_label;
-      $input->appendChild($attr);
-      $attr = $dom->createAttribute('type');
-      $attr->value = 'number';
-      $input->appendChild($attr);
-      $attr = $dom->createAttribute('step');
-      $attr->value = '0.000001';  //supports upto 6 decimal places
-      $input->appendChild($attr);
-      if(isset($ob_script)){
-        $attr = $dom->createAttribute('onchange');
-        $attr->value = $ob_script;
+      $values = array('True', 'False');
+      foreach($values as $val){
+        //echo $val." ";
+        $input = $dom->createElement('input');
+        $attr = $dom->createAttribute('type');
+        $attr->value = 'radio';                          //type is specified in the xml file
         $input->appendChild($attr);
+        $attr = $dom->createAttribute('name');
+        $attr->value = $ob_label;
+        $input->appendChild($attr);
+        $attr = $dom->createAttribute('value');          //get the value of the radio button for each $val
+        $attr->value = trim($val);
+        $input->appendChild($attr);
+
+        $form->appendChild($input);                      //append each and every radio input button
+        $label =  $dom->createElement('label', ($val));  //option text as label
+        $form->appendChild($label);
+        $form->appendChild($dom->createElement('br'));   // line breaker
       }
-      $form->appendChild($input);               //append select input button
-      $form->appendChild($dom->createElement('br')); // line breaker
     }
 
 
@@ -415,11 +417,14 @@
   $input->appendChild($attr);
 
   $attr = $dom->createAttribute('style');
-  $attr->value = "font-family: 'Oswald', sans-serif; size:";
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 47%;";
   $input->appendChild($attr);
 
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($input);
+
+  $dom->appendChild($dom->createElement('br')); // line breaker
+  $dom->appendChild($dom->createElement('br')); // line breaker
 
   //=========================================================================//
 
