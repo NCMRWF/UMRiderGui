@@ -68,6 +68,7 @@ fclose($cfgfile);
 
       case 'radio' :
       case 'select' :
+      case 'boolean':
         if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
           $filewrite .= $_POST[$ob_label];
         }
