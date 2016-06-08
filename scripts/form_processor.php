@@ -54,42 +54,58 @@ fclose($cfgfile);
     switch($ob_type){
 
       case 'checkbox' :
-        $val = '[';
-        foreach($_POST[$ob_label] as $var){
-          $val .= "'$var'".',';
-        }
-        $val = rtrim($val, ',');
-        $val .= ']';
-        $filewrite .= $val;
+          $val = '[';
+          if(isset($_POST[$ob_label]) && is_array($_POST[$ob_label]))
+          foreach($_POST[$ob_label] as $var){
+            $val .= "'$var'".',';
+          }
+          $val = rtrim($val, ',');
+          $val .= ']';
+          if($val == '[]') $val = 'None';
+          $filewrite .= $val;
+
       break;
 
       case 'radio' :
       case 'select' :
-        $filewrite .= $_POST[$ob_label];
+        if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
+          $filewrite .= $_POST[$ob_label];
+        }
+        else $filewrite .= "None";
       break;
 
       case 'date' :
-        $date = date('Ymd', strtotime($_POST[$ob_label]));
-        $filewrite .= $date;
+        if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
+          $date = date('Ymd', strtotime($_POST[$ob_label]));
+          $filewrite .= $date;
+        }
+        else $filewrite .= "None";
       break;
 
       case 'pinteger' :
       case 'float' :
       case 'integer' :
-        $filewrite .= $_POST[$ob_label];
+        if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
+          $filewrite .= $_POST[$ob_label];
+        }
+        else $filewrite .= "None";
       break;
 
       case 'text' :
-        $filewrite .= $_POST[$ob_label];
+        if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
+          $filewrite .= $_POST[$ob_label];
+        }
+        else $filewrite .= "None";
       break;
-    }// end of switch case
+
+    }// end of switch case------------------------------------------------------
 
     $filewrite .= PHP_EOL;
     $filewrite .= PHP_EOL;
     fwrite($cfgfile, $filewrite);
     $filewrite = "";
 
-  }//end of foreach object
+  }//end of foreach object------------------------------------------------------
   echo "SUCCESS: File has been created";
   fclose($cfgfile);
 
