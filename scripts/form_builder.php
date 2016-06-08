@@ -29,6 +29,7 @@
   //admin defined form header CONSTANTS
   $FORM_HEADER = $xml->title;
   $FORM_HEADER = trim($xml->title);
+  $USER_MESSAGE= trim($xml->message);
   //=========================================================================//
 
 
@@ -138,7 +139,8 @@
   $css_text = "h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif;}
                h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
                label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}";
+               select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}";
 
   $style = $dom->createElement('style', $css_text);
   $dom->appendChild($style);
@@ -153,6 +155,8 @@
   $header = $dom->createElement('h1', $FORM_HEADER);
   $dom->appendChild($header);
   $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
+  $message = $dom->createElement('em', $USER_MESSAGE);
+  $dom->appendChild($message);
   $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
@@ -230,7 +234,6 @@
         $attr->value = trim($val);
         $input->appendChild($attr);
 
-
         $form->appendChild($input);                      //append each and every radio input button
         $label =  $dom->createElement('label', ($val));  //option text as label
         $form->appendChild($label);
@@ -302,11 +305,95 @@
       $form->appendChild($dom->createElement('br')); // line breaker
     }
 
+    else if($ob_type == 'pinteger'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'number';
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('min');
+      $attr->value = '0';
+      $input->appendChild($attr);
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+
+    else if($ob_type == 'integer'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'number';
+      $input->appendChild($attr);
+      /*
+      $values = $object->validVals;
+      $attr = $dom->createAttribute('value');
+      $val = ($values->children())[0];
+      $attr->value = trim(($val);
+      $input->appendChild($attr);
+      */
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+
+    else if($ob_type == 'float'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'number';
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('step');
+      $attr->value = '0.000001';  //supports upto 6 decimal places
+      $input->appendChild($attr);
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+
+    else if($ob_type == 'boolean'){
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'number';
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('step');
+      $attr->value = '0.000001';  //supports upto 6 decimal places
+      $input->appendChild($attr);
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
+        $input->appendChild($attr);
+      }
+      $form->appendChild($input);               //append select input button
+      $form->appendChild($dom->createElement('br')); // line breaker
+    }
+
 
     $form->appendChild($dom->createElement('br')); // line breaker
     $form->appendChild($dom->createElement('br')); // line breaker
-
-  }
+    unset($ob_script);
+  } /////====================end of foreach object
 
 
 
