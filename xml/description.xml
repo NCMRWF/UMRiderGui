@@ -3,13 +3,14 @@
 <form>
 
 <title> FILL THE DETAILS BELOW </title>
-
+<message></message>
 <objects>
 
   <object>
-    <label> UMType1 </label>
+    <label> startdate </label>
     <description> This is description </description>
-    <inputType> radio </inputType>
+    <inputType> date </inputType>
+    <script></script>
     <validVals>
       <validVal> regional </validVal>
       <validVal> global </validVal>
@@ -19,9 +20,10 @@
   </object>
 
   <object>
-    <label> UMType2 </label>
+    <label> enddate </label>
     <description> This is description2 </description>
-    <inputType> text </inputType>
+    <inputType> date </inputType>
+    <script></script>
     <validVals>
       <validVal> onscript </validVal>
     </validVals>
@@ -32,6 +34,7 @@
     <label> UMType3 </label>
     <description> This is description </description>
     <inputType> select </inputType>
+    <script></script>
     <validVals>
       <validVal> regional </validVal>
       <validVal> global </validVal>
@@ -46,6 +49,7 @@
     <label> UMType4 </label>
     <description> This is description </description>
     <inputType> checkbox </inputType>
+    <script></script>
     <validVals>
       <validVal> regional2 </validVal>
       <validVal> global3 </validVal>
@@ -59,11 +63,14 @@
   <object>
     <label> UMType5 </label>
     <description> This is description </description>
-    <inputType> select </inputType>
+    <inputType> boolean </inputType>
+    <script></script>
     <validVals>
-      <validVal> regional1 </validVal>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
       <validVal> global2 </validVal>
-      <validVal> ensemble3 </validVal>
+      <validVal> ensemble2 </validVal>
     </validVals>
     <comment> This is a comment string </comment>
   </object>
@@ -71,13 +78,44 @@
   <object>
     <label> UMType6 </label>
     <description> This is description </description>
-    <inputType> checkbox </inputType>
+    <inputType> integer </inputType>
+    <script></script>
     <validVals>
-      <validVal> val1 </validVal>
-      <validVal> valu2 </validVal>
-      <validVal> val3 </validVal>
-      <validVal> valu4 </validVal>
-      <validVal> val5 </validVal>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType7 </label>
+    <description> This is description </description>
+    <inputType> float </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType8 </label>
+    <description> This is description </description>
+    <inputType> pinteger </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
     </validVals>
     <comment> This is a comment string </comment>
   </object>
