@@ -322,6 +322,7 @@
     }
     //==================================//
     else if($ob_type == 'pinteger'){            //render positive only integers
+
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -341,6 +342,8 @@
         $input->appendChild($attr);
       }
       $form->appendChild($input);               //append select input button
+      $label =  $dom->createElement('label', ' (+ve integer)');
+      $form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
@@ -367,7 +370,10 @@
         $attr->value = $ob_script;
         $input->appendChild($attr);
       }
+
       $form->appendChild($input);               //append select input button
+      $label =  $dom->createElement('label', ' (integer)');
+      $form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
@@ -391,6 +397,8 @@
         $input->appendChild($attr);
       }
       $form->appendChild($input);               //append select input button
+      $label =  $dom->createElement('label', ' (float)');
+      $form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
