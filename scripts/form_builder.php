@@ -140,7 +140,11 @@
                h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
                label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
                select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}";
+               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}/*
+               *{background: -webkit-linear-gradient(left, white , grey); /* For Safari 5.1 to 6.0 */
+               background: -o-linear-gradient(right, white, grey); /* For Opera 11.1 to 12.0 */
+               background: -moz-linear-gradient(right, white, grey); /* For Firefox 3.6 to 15 */
+             background: linear-gradient(to right, white , grey); /* Standard syntax (must be last)*/}*/ ";
 
   $style = $dom->createElement('style', $css_text);
   $dom->appendChild($style);
@@ -161,7 +165,8 @@
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
 
-
+  $div = $dom->createElement('div');
+  $dom->appendChild($div);
   //form tag code starts below (not form's start, just the code responsible for form tags are here)
   $form =  $dom->createElement('form');                 //make a form tag and drop all the content in it
   $attr =  $dom->createAttribute('action');             //create an attribute for the form tag
@@ -171,7 +176,7 @@
   $attr->value = 'post';
   $form->appendChild($attr);                            //done making form attributes
   //end of form tag
-  $dom->appendChild($form);                             //append the form to dom right here.
+  $div->appendChild($form);                             //append the form to dom right here.
 
 
   //=========================================================================//
@@ -383,7 +388,11 @@
         $attr = $dom->createAttribute('value');          //get the value of the radio button for each $val
         $attr->value = trim($val);
         $input->appendChild($attr);
-
+        if(isset($ob_script)){
+          $attr = $dom->createAttribute('onchange');
+          $attr->value = $ob_script;
+          $input->appendChild($attr);
+        }
         $form->appendChild($input);                      //append each and every radio input button
         $label =  $dom->createElement('label', ($val));  //option text as label
         $form->appendChild($label);
@@ -422,6 +431,7 @@
 
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($input);
+  // form was already appended to the div which was appended to dom before.
 
   $dom->appendChild($dom->createElement('br')); // line breaker
   $dom->appendChild($dom->createElement('br')); // line breaker
