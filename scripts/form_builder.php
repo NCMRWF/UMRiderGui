@@ -428,6 +428,24 @@
       }
     }
 
+    else if($ob_type == 'password'){
+        $input = $dom->createElement('input');
+        $attr = $dom->createAttribute('type');
+        $attr->value = 'password';                          //type is specified in the xml file
+        $input->appendChild($attr);
+        $attr = $dom->createAttribute('name');
+        $attr->value = $ob_label;
+        $input->appendChild($attr);
+        if(isset($ob_script)){
+          $attr = $dom->createAttribute('onchange');
+          $attr->value = $ob_script;
+          $input->appendChild($attr);
+        }
+        $form->appendChild($input);                      //append each and every radio input button
+        $label =  $dom->createElement('label', ' (password)');  //option text as label
+        $form->appendChild($label);
+        $form->appendChild($dom->createElement('br'));   // line breaker
+    }
 
     $form->appendChild($dom->createElement('br')); // line breaker
     $form->appendChild($dom->createElement('br')); // line breaker
