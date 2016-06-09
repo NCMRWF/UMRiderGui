@@ -10,6 +10,7 @@
   $FORM_HANDLER = 'form_processor.php';
   $FORM_HEADER  = 'ALL FIELDS NECCESSARY';
   $VALIDATOR_JS = 'validator.js';
+  $FORM_CSS     = 'styler.css';
   //=========================================================================//
   //styling constants
   $HEADER_FONT_LINK =  'https://fonts.googleapis.com/css?family=Titillium+Web:300';
@@ -136,23 +137,7 @@
   object labels are <h4>
   */
 
-  $css_text = "h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif;}
-
-               h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
-
-               label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               em{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               date{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               number{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-               //div{width: 450px;}
-               /*
-               div{background: -webkit-linear-gradient(left, white , grey); /* For Safari 5.1 to 6.0 */
-               background: -o-linear-gradient(right, white, grey); /* For Opera 11.1 to 12.0 */
-               background: -moz-linear-gradient(right, white, grey); /* For Firefox 3.6 to 15 */
-               background: linear-gradient(to right, white , grey); /* Standard syntax (must be last)*/}
-               */
-               ";
+  $css_text = file_get_contents($FORM_CSS);
 
   $style = $dom->createElement('style', $css_text);
   $dom->appendChild($style);
@@ -164,11 +149,28 @@
   //=========================================================================//
 
   //form header in h2
+  $div = $dom->createElement('div');
+  $attr = $dom->createAttribute('class');
+  $attr->value = 'header';
+  $div->appendChild($attr);
   $header = $dom->createElement('h1', $FORM_HEADER);
-  $dom->appendChild($header);
+  $div->appendChild($header);
+  $dom->appendChild($div);
   $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
-  $message = $dom->createElement('em', $USER_MESSAGE);
-  $dom->appendChild($message);
+
+  if(trim($USER_MESSAGE) != '' || $USER_MESSAGE != NULL){
+    //<span class="glyphicons glyphicons-alert"></span>
+    $alert = $dom->createElement('image', ' ');
+    $attr = $dom->createAttribute('src');
+    $attr->value = 'alert.png';
+    $alert->appendChild($attr);
+    $attr = $dom->createAttribute('style');
+    $attr->value = "width:19px; height:19px; position:relative; top:4px";
+    $alert->appendChild($attr);
+    $dom->appendChild($alert);
+    $message = $dom->createElement('em', $USER_MESSAGE);
+    $dom->appendChild($message);
+  }
   $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
@@ -472,7 +474,7 @@
   $input->appendChild($attr);
 
   $attr = $dom->createAttribute('style');
-  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 47%;";
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 44%; font-size: 100%;";
   $input->appendChild($attr);
 
   $form->appendChild($dom->createElement('br')); // line breaker
