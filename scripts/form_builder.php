@@ -525,10 +525,14 @@
   $form->appendChild($dom->createElement('br')); // line breaker
 //=========================================================================//
   //status div for description and instructions
-  $div2 = $dom->createElement('div', 'CONTAINS DESCRIPTION FOR THE FORM ELEMENTS');
+  $div2 = $dom->createElement('div');
   $attr = $dom->createAttribute('class');
   $attr->value = 'description';
   $div2->appendChild($attr);
+
+  $stray_header = $dom->createElement('h4', 'HOVER MOUSE OVER FIELD NAME FOR DESCRIPTION');
+  $div2->appendChild($stray_header);
+  //=================add DESCRIPTION CONTENT HERE ====================//
   $dom->appendChild($div2);
 
 
