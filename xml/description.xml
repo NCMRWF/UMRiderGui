@@ -3,7 +3,8 @@
 <form>
 
 <title> FILL THE DETAILS BELOW </title>
-<message></message>
+<end> N.C.M.R.W.F </end>
+<message> message for the user : Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. magnis dis partur </message>
 <objects>
 
   <object>
@@ -31,16 +32,14 @@
   </object>
 
   <object>
-    <label> UMType3 </label>
+    <label> UMType </label>
     <description> This is description </description>
-    <inputType> select </inputType>
+    <inputType> text </inputType>
     <script></script>
     <validVals>
-      <validVal> regional </validVal>
       <validVal> global </validVal>
+      <validVal> regional </validVal>
       <validVal> ensemble </validVal>
-      <validVal> global2 </validVal>
-      <validVal> ensemble2 </validVal>
     </validVals>
     <comment> This is a comment string </comment>
   </object>
@@ -63,7 +62,7 @@
   <object>
     <label> UMType5 </label>
     <description> This is description </description>
-    <inputType> boolean </inputType>
+    <inputType> select </inputType>
     <script></script>
     <validVals>
       <validVal> regional2 </validVal>
