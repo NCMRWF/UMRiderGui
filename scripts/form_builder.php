@@ -31,6 +31,7 @@
   $FORM_HEADER = $xml->title;
   $FORM_HEADER = trim($xml->title);
   $USER_MESSAGE= trim($xml->message);
+  $FORM_FOOTER = trim($xml->end);
   //=========================================================================//
 
 
@@ -533,6 +534,16 @@
 
   $dom->appendChild($dom->createElement('br')); // dom line breaker
   $dom->appendChild($dom->createElement('br')); // dom line breaker
+
+
+  $label = $dom->createElement('label', $FORM_FOOTER);
+
+  $footer = $dom->createElement('div');
+  $attr = $dom->createAttribute('class');
+  $attr->value = 'footer';
+  $footer->appendChild($attr);
+  $footer->appendChild($label);
+  $dom->appendChild($footer);
 
 //=========================================================================//
 
