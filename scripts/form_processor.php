@@ -93,6 +93,7 @@ fclose($cfgfile);
       break;
 
       case 'text' :
+      case 'password' :
         if(isset($_POST[$ob_label]) && $_POST[$ob_label] != NULL && $_POST[$ob_label] != ''){
           $filewrite .= $_POST[$ob_label];
         }
