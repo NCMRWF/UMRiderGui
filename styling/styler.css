@@ -1,0 +1,21 @@
+h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif;}
+h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
+label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+em{color:#404040; font-family: 'Open Sans Condensed', sans-serif; background-color: #ffe6e6}
+date{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+number{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
+input{border-radius: 5px;}
+/*
+div{background: -webkit-linear-gradient(left, white , grey);
+background: -o-linear-gradient(right, white, grey);
+background: -moz-linear-gradient(right, white, grey);
+background: linear-gradient(to right, white , grey);}
+*/
+div.header{
+  border-radius: 2px;
+  background: -webkit-linear-gradient(left, white , #d9d9d9);
+  background: -o-linear-gradient(right, white, #d9d9d9);
+  background: -moz-linear-gradient(right, white, #d9d9d9);
+  background: linear-gradient(to right, white , #d9d9d9);
+}
