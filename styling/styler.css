@@ -62,3 +62,21 @@ div.description{
   background: -moz-linear-gradient(right, #f7f7f7 , white);
   background: linear-gradient(to right, #f7f7f7 , white);
 }
+
+div.footer{
+  border-radius: 2px;
+  height: 5%;
+  text-align: right;
+  background: -webkit-linear-gradient(left, #c9c9c9 , white);
+  background: -o-linear-gradient(right, #c9c9c9 , white);
+  background: -moz-linear-gradient(right, #c9c9c9 , white);
+  background: linear-gradient(to right, #c9c9c9 , white);
+}
+
+.footer label{
+  position: relative;
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  top: 3px;
+  left: -15px;
+}
