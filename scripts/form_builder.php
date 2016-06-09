@@ -165,13 +165,14 @@
     $attr->value = 'alert.png';
     $alert->appendChild($attr);
     $attr = $dom->createAttribute('style');
-    $attr->value = "width:19px; height:19px; position:relative; top:4px";
+    $attr->value = "width:19px; height:19px; position:relative; top:4px; left: 2px;";
     $alert->appendChild($attr);
     $dom->appendChild($alert);
     $message = $dom->createElement('em', $USER_MESSAGE);
     $dom->appendChild($message);
+    $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
   }
-  $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
+
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
   $dom->appendChild($dom->createElement('br')); //dom line-breaker
 
@@ -191,11 +192,11 @@
 
   //=========================================================================//
   //PARSING AND ADDING THE OBJECTS BELOW
-  //$stray_bool = 0;
+  $stray_bool = 0;
   foreach($xml->objects->children() as $object){
-    //if($stray_bool)
+    if($stray_bool)
     $form->appendChild($dom->createElement('hr')); //form horizontal ruler
-    //$stray_bool = 1;
+    $stray_bool = 1;
     $form->appendChild($dom->createElement('br')); // line breaker
     // write these below 2 to a file --- option1
     // make the for reading dynamic for the form_processor.php --- option2
@@ -222,7 +223,7 @@
       $attr->value = $ob_label;                 //label is specified in the xml file, becomes identity name && field description
       $input->appendChild($attr);
       $attr = $dom->createAttribute('placeholder');
-      $attr->value = $ob_label;                 //label is specified in the xml file, becomes identity name && field description
+      $attr->value = ' '.$ob_label;                 //label is specified in the xml file, becomes identity name && field description
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
       $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
@@ -341,7 +342,7 @@
       $attr->value = '0';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('placeholder');
-      $attr->value = 'any positive integer';
+      $attr->value = ' any positive integer';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
       $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
@@ -373,7 +374,7 @@
       $input->appendChild($attr);
       */
       $attr = $dom->createAttribute('placeholder');
-      $attr->value = 'any integer';
+      $attr->value = ' any integer';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
       $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
@@ -402,7 +403,7 @@
       $attr->value = '0.000001';  //supports upto 6 decimal places
       $input->appendChild($attr);
       $attr = $dom->createAttribute('placeholder');
-      $attr->value = 'upto 6 decimal digits';
+      $attr->value = ' upto 6 decimal digits';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
       $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
@@ -453,7 +454,7 @@
         $attr->value = $ob_label;
         $input->appendChild($attr);
         $attr = $dom->createAttribute('placeholder');
-        $attr->value = 'password';
+        $attr->value = ' password';
         $input->appendChild($attr);
         $attr = $dom->createAttribute('style');
         $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
@@ -479,8 +480,8 @@
   $form->appendChild($dom->createElement('hr')); //form horizontal ruler
 
 
-  $form->appendChild($dom->createElement('br')); // line breaker
-  $form->appendChild($dom->createElement('br')); // line breaker
+  //$form->appendChild($dom->createElement('br')); // line breaker
+  //$form->appendChild($dom->createElement('br')); // line breaker
 
   //=========================================================================//
   //submit button
@@ -494,17 +495,46 @@
   $input->appendChild($attr);
 
   $attr = $dom->createAttribute('style');
-  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 44%; font-size: 100%;";
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 37.9%; font-size: 100%;";
   $input->appendChild($attr);
 
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($input);
   // form was already appended to the div which was appended to dom before.
 
-  $dom->appendChild($dom->createElement('br')); // line breaker
-  $dom->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $input = $dom->createElement('input');
+  $attr = $dom->createAttribute('type');
+  $attr->value = 'reset';
+  $input->appendChild($attr);
 
-  //=========================================================================//
+  $attr = $dom->createAttribute('value');
+  $attr->value = 'RESET FORM';
+  $input->appendChild($attr);
+
+  $attr = $dom->createAttribute('style');
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 38.7%; font-size: 100%;";
+  $input->appendChild($attr);
+
+  $form->appendChild($dom->createElement('br')); // line breaker
+
+  $form->appendChild($input);
+
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+//=========================================================================//
+  //status div for description and instructions
+  $div2 = $dom->createElement('div', 'CONTAINS DESCRIPTION FOR THE FORM ELEMENTS');
+  $attr = $dom->createAttribute('class');
+  $attr->value = 'description';
+  $div2->appendChild($attr);
+  $dom->appendChild($div2);
+
+
+  $dom->appendChild($dom->createElement('br')); // dom line breaker
+  $dom->appendChild($dom->createElement('br')); // dom line breaker
+
+//=========================================================================//
 
   echo $dom->saveHTML();  //run the html in the browser
 
