@@ -1,11 +1,41 @@
-h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif;}
-h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline;}
+h1{color:#8c8c8c; font-family: 'Titillium Web', sans-serif; margin-left: 3px;}
+h4{color:#4d4d4d; font-family: 'Oswald', sans-serif; text-decoration: underline; margin-left: 10px;}
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+/*
+form hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+*/
 label{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-select{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-em{color:#404040; font-family: 'Open Sans Condensed', sans-serif; background-color: #ffe6e6}
-date{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-number{color:#404040; font-family: 'Open Sans Condensed', sans-serif;}
-input{border-radius: 5px;}
+select{
+  color:#404040;
+  font-family: 'Open Sans Condensed',
+  sans-serif; margin-left: 7px;
+  border-radius: 5px;
+  width: 167px;
+}
+em{color:#404040; font-family: 'Open Sans Condensed', sans-serif; background-color: #ffe6e6; margin-left: 7px;}
+date{color:#404040; font-family: 'Open Sans Condensed', sans-serif; margin-left: 7px;}
+number{color:#404040; font-family: 'Open Sans Condensed', sans-serif; margin-left: 7px;}
+input{border-radius: 5px; margin-left: 5px;}
+form {
+    width: 50%;
+    margin: 0 ;
+    border: 2px solid #595959;
+    border-radius: 10px;
+}
 /*
 div{background: -webkit-linear-gradient(left, white , grey);
 background: -o-linear-gradient(right, white, grey);
