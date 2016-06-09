@@ -191,9 +191,11 @@
 
   //=========================================================================//
   //PARSING AND ADDING THE OBJECTS BELOW
-
+  //$stray_bool = 0;
   foreach($xml->objects->children() as $object){
+    //if($stray_bool)
     $form->appendChild($dom->createElement('hr')); //form horizontal ruler
+    //$stray_bool = 1;
     $form->appendChild($dom->createElement('br')); // line breaker
     // write these below 2 to a file --- option1
     // make the for reading dynamic for the form_processor.php --- option2
@@ -221,6 +223,9 @@
       $input->appendChild($attr);
       $attr = $dom->createAttribute('placeholder');
       $attr->value = $ob_label;                 //label is specified in the xml file, becomes identity name && field description
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -312,7 +317,7 @@
       $attr->value = $ob_type;
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -335,8 +340,11 @@
       $attr = $dom->createAttribute('min');
       $attr->value = '0';
       $input->appendChild($attr);
+      $attr = $dom->createAttribute('placeholder');
+      $attr->value = 'any positive integer';
+      $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -344,8 +352,8 @@
         $input->appendChild($attr);
       }
       $form->appendChild($input);               //append select input button
-      $label =  $dom->createElement('label', ' (+ve integer)');
-      $form->appendChild($label);
+      //$label =  $dom->createElement('label', ' (+ve integer)');
+      //$form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
@@ -364,8 +372,11 @@
       $attr->value = trim(($val);
       $input->appendChild($attr);
       */
+      $attr = $dom->createAttribute('placeholder');
+      $attr->value = 'any integer';
+      $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -374,8 +385,8 @@
       }
 
       $form->appendChild($input);               //append select input button
-      $label =  $dom->createElement('label', ' (integer)');
-      $form->appendChild($label);
+      //$label =  $dom->createElement('label', ' (integer)');
+      //$form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
@@ -390,8 +401,11 @@
       $attr = $dom->createAttribute('step');
       $attr->value = '0.000001';  //supports upto 6 decimal places
       $input->appendChild($attr);
+      $attr = $dom->createAttribute('placeholder');
+      $attr->value = 'upto 6 decimal digits';
+      $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -399,8 +413,8 @@
         $input->appendChild($attr);
       }
       $form->appendChild($input);               //append select input button
-      $label =  $dom->createElement('label', ' (float)');
-      $form->appendChild($label);
+      //$label =  $dom->createElement('label', ' (float)');
+      //$form->appendChild($label);
       $form->appendChild($dom->createElement('br')); // line breaker
     }
     //==================================//
@@ -438,14 +452,20 @@
         $attr = $dom->createAttribute('name');
         $attr->value = $ob_label;
         $input->appendChild($attr);
+        $attr = $dom->createAttribute('placeholder');
+        $attr->value = 'password';
+        $input->appendChild($attr);
+        $attr = $dom->createAttribute('style');
+        $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+        $input->appendChild($attr);
         if(isset($ob_script)){
           $attr = $dom->createAttribute('onchange');
           $attr->value = $ob_script;
           $input->appendChild($attr);
         }
-        $form->appendChild($input);                      //append each and every radio input button
-        $label =  $dom->createElement('label', ' (password)');  //option text as label
-        $form->appendChild($label);
+        $form->appendChild($input);                      //append each and every input
+        //$label =  $dom->createElement('label', ' (password)');  //option text as label
+        //$form->appendChild($label);
         $form->appendChild($dom->createElement('br'));   // line breaker
     }
 
