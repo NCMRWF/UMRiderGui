@@ -63,6 +63,11 @@ div.description{
   background: linear-gradient(to right, #f7f7f7 , white);
 }
 
+div.description p{
+  color: #2d2d2d; font-family: 'Open Sans Condensed', sans-serif; margin-left: 10px;
+  font-weight: bold; margin-right: 10px;
+}
+
 div.footer{
   border-radius: 2px;
   height: 5%;

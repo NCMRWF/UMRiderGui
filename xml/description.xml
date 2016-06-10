@@ -4,12 +4,18 @@
 
 <title> FILL THE DETAILS BELOW . . . </title>
 <end> N.C.M.R.W.F </end>
-<message> message for the user : Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. magnis dis partur </message>
+<message>  </message>
 <objects>
 
   <object>
     <label> startdate </label>
-    <description> This is description </description>
+    <description>
+      By default startdate takes argument as YYYYMMDD (which means it assume today's date)
+      But user can specify the different startdate by follwing the same format.
+      for eg, startdate = 20151209 # then it will execute the scripts for 09-Dec-2015.
+      startdate = YYYYMMDD # then it will execute the scripts for today's date.
+      Note : However UMRIDER_STARTDATE environment variable will override this startdate option.
+    </description>
     <inputType> date </inputType>
     <script></script>
     <validVals>
@@ -22,7 +28,17 @@
 
   <object>
     <label> enddate </label>
-    <description> This is description2 </description>
+    <description>
+      By default enddate is None. User can specify different enddate (but > startdate)
+      i.e. for only specfied date / one date, user needs to control only in the
+      startdate and enddate must be None. If user want to execute the um2grb2
+      conversion for the range of dates, then user need to set the lower startdate
+      end higher enddate. enddate could be even YYYYMMDD, but make sure that
+      startdate is lower than enddate.
+      For eg : startdate = 20151209 and enddate = 20160114 , then um2grb2
+      conversion program executes from 09-dec-2015 to 14-jan-2016.
+      Note : However UMRIDER_ENDDATE environment variable will override this enddate option.
+    </description>
     <inputType> date </inputType>
     <script></script>
     <validVals>

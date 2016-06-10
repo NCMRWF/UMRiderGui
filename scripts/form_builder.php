@@ -43,19 +43,9 @@
 
 
   //=========================================================================//
-  $Jscript = "
-              function descriptor(obj){
-                var getter = obj.innerHTML;
-                var ID = (getter.slice(0, -2)).trim();
+  fopen($VALIDATOR_JS, 'r');
+  $Jscript = file_get_contents($VALIDATOR_JS);
 
-                var ele = document.getElementById(ID);
-                document.getElementById(\"descript\").innerHTML = ele.value;
-              }
-
-              function clear_descript(){
-                document.getElementById(\"descript\").innerHTML = '';
-              }
-            ";
   /*
   //linking the doc to the validator JAVASCRIPT script
   $Jscript = "function descriptor(obj){
