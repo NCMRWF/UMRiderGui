@@ -43,12 +43,38 @@
 
 
   //=========================================================================//
+  $Jscript = "
+              function descriptor(obj){
+                var getter = obj.innerHTML;
+                var ID = (getter.slice(0, -2)).trim();
+
+                var ele = document.getElementById(ID);
+                document.getElementById(\"descript\").innerHTML = ele.value;
+              }
+
+              function clear_descript(){
+                document.getElementById(\"descript\").innerHTML = '';
+              }
+            ";
+  /*
   //linking the doc to the validator JAVASCRIPT script
-  $script = $dom->createElement('script', ' ');
+  $Jscript = "function descriptor(obj){
+    var ID = obj.value;
+    var ele = getElementByID(ID);
+    alert('descriptor called! : ' + obj.value);
+    getElementById('descript').innerHTML = obj.value;
+  }
+
+  function clear_descript(){
+    getElementById('descript').innerHTML = '';
+  }";
+  $script = $dom->createElement('script', $Jscript);
   $attr = $dom->createAttribute('src');
   $attr->value = $VALIDATOR_JS;
   $script->appendChild($attr);
+
   $dom->appendChild($script);
+  */
   //=========================================================================//
 
 
@@ -203,11 +229,21 @@
     // make the for reading dynamic for the form_processor.php --- option2
     $ob_label = trim($object->label);             //object label
     $ob_type = trim($object->inputType);          //object type
+    $ob_descript = trim($object->description);    //object description
     if(trim($object->script) != '' || trim($object->script) != NULL){
       $ob_script = ($object->script).'(this)';    //object script function if any
     }
 
     $label = $dom->createElement('h4', $ob_label." : ");    //object labels in h4
+    // label description to be read by javascript script
+    $attr = $dom->createAttribute('onmouseover');
+    $attr->value = 'descriptor(this)';    // and this.value is the ob_label which inturn is the ID of it's descript
+    $label->appendChild($attr);
+
+    $attr = $dom->createAttribute('onmouseout');
+    $attr->value = 'clear_descript()';
+    $label->appendChild($attr);
+
     $form->appendChild($label);
 
     //start input tag code
@@ -216,6 +252,18 @@
     $input = $dom->createElement('input');
 
     if($ob_type == 'text'){ //text type handler
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
 
       $attr = $dom->createAttribute('type');
       $attr->value = $ob_type;                  //type is specified in the xml file
@@ -242,6 +290,17 @@
 
     //==================================//
     else if($ob_type == 'radio'){                         // radio type handler
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $values = $object->validVals;
       foreach($values->children() as $val){
         //echo $val." ";
@@ -264,6 +323,17 @@
     }
     //==================================//
     else if($ob_type == 'select'){
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $values = $object->validVals;
       $select = $dom->createElement('select');
       $attr = $dom->createAttribute('name');
@@ -285,6 +355,17 @@
     }
     //==================================//
     else if($ob_type == 'checkbox'){
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $values = $object->validVals;
       foreach($values->children() as $val){
           $input = $dom->createElement('input');
@@ -311,6 +392,17 @@
     }
     //==================================//
     else if($ob_type == 'date'){
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -331,7 +423,17 @@
     }
     //==================================//
     else if($ob_type == 'pinteger'){            //render positive only integers
-
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -360,6 +462,17 @@
     }
     //==================================//
     else if($ob_type == 'integer'){             // render integer types -ve or +ve
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -393,6 +506,17 @@
     }
     //==================================//
     else if($ob_type == 'float' || $ob_type == 'number'){
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');          //render float/ decimal values upto 6 decimal places
       $attr = $dom->createAttribute('name');
       $attr->value = $ob_label;
@@ -421,6 +545,17 @@
     }
     //==================================//
     else if($ob_type == 'boolean'){
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
       $values = array('True', 'False');
       foreach($values as $val){
         //echo $val." ";
@@ -447,28 +582,39 @@
     }
 
     else if($ob_type == 'password'){
-        $input = $dom->createElement('input');
-        $attr = $dom->createAttribute('type');
-        $attr->value = 'password';                          //type is specified in the xml file
+      $hidden_descript = $dom->createElement('input');
+      $attr = $dom->createAttribute('value');
+      $attr->value = $ob_descript;
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'hidden';
+      $hidden_descript->appendChild($attr);
+      $attr = $dom->createAttribute('id');
+      $attr->value = $ob_label;
+      $hidden_descript->appendChild($attr);
+      $dom->appendChild($hidden_descript);
+      $input = $dom->createElement('input');
+      $attr = $dom->createAttribute('type');
+      $attr->value = 'password';                          //type is specified in the xml file
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('name');
+      $attr->value = $ob_label;
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('placeholder');
+      $attr->value = ' password';
+      $input->appendChild($attr);
+      $attr = $dom->createAttribute('style');
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $input->appendChild($attr);
+      if(isset($ob_script)){
+        $attr = $dom->createAttribute('onchange');
+        $attr->value = $ob_script;
         $input->appendChild($attr);
-        $attr = $dom->createAttribute('name');
-        $attr->value = $ob_label;
-        $input->appendChild($attr);
-        $attr = $dom->createAttribute('placeholder');
-        $attr->value = ' password';
-        $input->appendChild($attr);
-        $attr = $dom->createAttribute('style');
-        $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
-        $input->appendChild($attr);
-        if(isset($ob_script)){
-          $attr = $dom->createAttribute('onchange');
-          $attr->value = $ob_script;
-          $input->appendChild($attr);
-        }
-        $form->appendChild($input);                      //append each and every input
-        //$label =  $dom->createElement('label', ' (password)');  //option text as label
-        //$form->appendChild($label);
-        $form->appendChild($dom->createElement('br'));   // line breaker
+      }
+      $form->appendChild($input);                      //append each and every input
+      //$label =  $dom->createElement('label', ' (password)');  //option text as label
+      //$form->appendChild($label);
+      $form->appendChild($dom->createElement('br'));   // line breaker
     }
 
     $form->appendChild($dom->createElement('br')); // line breaker
@@ -524,6 +670,7 @@
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($dom->createElement('br')); // line breaker
 //=========================================================================//
+
   //status div for description and instructions
   $div2 = $dom->createElement('div');
   $attr = $dom->createAttribute('class');
@@ -532,7 +679,15 @@
 
   $stray_header = $dom->createElement('h4', 'HOVER MOUSE OVER FIELD NAME FOR DESCRIPTION');
   $div2->appendChild($stray_header);
-  //=================add DESCRIPTION CONTENT HERE ====================//
+  //=================DESCRIPTION CONTENT HERE ====================//
+  //$div2->appendChild($dom->createElement('br')); // div2 line break
+  $content = $dom->createElement('p', '');
+  $attr = $dom->createAttribute('id');
+  $attr->value = "descript";
+  $content->appendChild($attr);
+  //$attr = $dom->createAttribute('class');
+  $div2->appendChild($content);
+
   $dom->appendChild($div2);
 
 
@@ -548,8 +703,10 @@
   $footer->appendChild($attr);
   $footer->appendChild($label);
   $dom->appendChild($footer);
-
 //=========================================================================//
+  // add the script at last
+  $script = $dom->createElement('script', $Jscript);
+  $dom->appendChild($script);
 
   echo $dom->saveHTML();  //run the html in the browser
 
