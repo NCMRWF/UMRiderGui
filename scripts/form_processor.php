@@ -43,7 +43,14 @@ fclose($cfgfile);
   $filewrite = "";                              //the string to be written to the file
   $cfgfile = fopen($OUTPUT_FILE, "w");
 
-  foreach($xml->objects->children() as $object){
+  $model_type = file_get_contents('umtype.txt');
+  $umtype = trim($model_type);
+  $filewrite .= 'UMType = '.$model_type.PHP_EOL;
+
+  if($model_type == 'global') $model = $xml->global->objects;
+  if($model_type == 'ensemble') $model = $xml->ensemble->objects;
+  if($model_type == 'regional') $model = $xml->regional->objects;
+  foreach($model->children() as $object){
     $ob_label = trim($object->label);             //object label
     $ob_type = trim($object->inputType);          //object type
     $ob_descript = trim($object->description);
