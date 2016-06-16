@@ -210,7 +210,14 @@
   //=========================================================================//
   //PARSING AND ADDING THE OBJECTS BELOW
   $stray_bool = 0;
-  foreach($xml->objects->children() as $object){
+  //$model_type = $model_file.;
+  $model_file = fopen('umtype.txt', 'r');
+  $model_type = fgets($model_file);
+  $model = $xml->global;
+  if($model_type == 'global') $model = $xml->global->objects;
+  if($model_type == 'ensemble') $model = $xml->ensemble->objects;
+  if($model_type == 'regional') $model = $xml->regional->objects;
+  foreach($model->children() as $object){
     if($stray_bool)
     $form->appendChild($dom->createElement('hr')); //form horizontal ruler
     $stray_bool = 1;
