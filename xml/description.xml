@@ -5,6 +5,10 @@
 <title> FILL THE DETAILS BELOW . . . </title>
 <end> N.C.M.R.W.F </end>
 <message>  </message>
+
+
+
+<global>
 <objects>
 
   <object>
@@ -136,5 +140,208 @@
   </object>
 
 </objects>
+</global>
+
+
+
+
+
+<ensemble>
+<objects>
+
+  <object>
+    <label> startdate </label>
+    <description>
+      By default startdate takes argument as YYYYMMDD (which means it assume today's date)
+      But user can specify the different startdate by follwing the same format.
+      for eg, startdate = 20151209 # then it will execute the scripts for 09-Dec-2015.
+      startdate = YYYYMMDD # then it will execute the scripts for today's date.
+      Note : However UMRIDER_STARTDATE environment variable will override this startdate option.
+    </description>
+    <inputType> date </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional </validVal>
+      <validVal> global </validVal>
+      <validVal> ensemble </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> enddate </label>
+    <description>
+      By default enddate is None. User can specify different enddate (but > startdate)
+      i.e. for only specfied date / one date, user needs to control only in the
+      startdate and enddate must be None. If user want to execute the um2grb2
+      conversion for the range of dates, then user need to set the lower startdate
+      end higher enddate. enddate could be even YYYYMMDD, but make sure that
+      startdate is lower than enddate.
+      For eg : startdate = 20151209 and enddate = 20160114 , then um2grb2
+      conversion program executes from 09-dec-2015 to 14-jan-2016.
+      Note : However UMRIDER_ENDDATE environment variable will override this enddate option.
+    </description>
+    <inputType> date </inputType>
+    <script></script>
+    <validVals>
+      <validVal> onscript </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType </label>
+    <description> This is description </description>
+    <inputType> text </inputType>
+    <script></script>
+    <validVals>
+      <validVal> global </validVal>
+      <validVal> regional </validVal>
+      <validVal> ensemble </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+</objects>
+</ensemble>
+
+
+
+
+<regional>
+<objects>
+
+  <object>
+    <label> startdate </label>
+    <description>
+      By default startdate takes argument as YYYYMMDD (which means it assume today's date)
+      But user can specify the different startdate by follwing the same format.
+      for eg, startdate = 20151209 # then it will execute the scripts for 09-Dec-2015.
+      startdate = YYYYMMDD # then it will execute the scripts for today's date.
+      Note : However UMRIDER_STARTDATE environment variable will override this startdate option.
+    </description>
+    <inputType> date </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional </validVal>
+      <validVal> global </validVal>
+      <validVal> ensemble </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> enddate </label>
+    <description>
+      By default enddate is None. User can specify different enddate (but > startdate)
+      i.e. for only specfied date / one date, user needs to control only in the
+      startdate and enddate must be None. If user want to execute the um2grb2
+      conversion for the range of dates, then user need to set the lower startdate
+      end higher enddate. enddate could be even YYYYMMDD, but make sure that
+      startdate is lower than enddate.
+      For eg : startdate = 20151209 and enddate = 20160114 , then um2grb2
+      conversion program executes from 09-dec-2015 to 14-jan-2016.
+      Note : However UMRIDER_ENDDATE environment variable will override this enddate option.
+    </description>
+    <inputType> date </inputType>
+    <script></script>
+    <validVals>
+      <validVal> onscript </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType </label>
+    <description> This is description </description>
+    <inputType> text </inputType>
+    <script></script>
+    <validVals>
+      <validVal> global </validVal>
+      <validVal> regional </validVal>
+      <validVal> ensemble </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType4 </label>
+    <description> This is description </description>
+    <inputType> checkbox </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType5 </label>
+    <description> This is description </description>
+    <inputType> select </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType6 </label>
+    <description> This is description </description>
+    <inputType> integer </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType7 </label>
+    <description> This is description </description>
+    <inputType> float </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+  <object>
+    <label> UMType8 </label>
+    <description> This is description </description>
+    <inputType> pinteger </inputType>
+    <script></script>
+    <validVals>
+      <validVal> regional2 </validVal>
+      <validVal> global3 </validVal>
+      <validVal> ensemble1 </validVal>
+      <validVal> global2 </validVal>
+      <validVal> ensemble2 </validVal>
+    </validVals>
+    <comment> This is a comment string </comment>
+  </object>
+
+</objects>
+</regional>
+
+
 
 </form>
