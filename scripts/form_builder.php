@@ -217,9 +217,19 @@
   $model_type = $_POST['model_type'];
   file_put_contents('umtype.txt', $model_type);   // for the form_processor
   $model = $xml->global;
+  /*
   if($model_type == 'global') $model = $xml->global->objects;
   if($model_type == 'ensemble') $model = $xml->ensemble->objects;
   if($model_type == 'regional') $model = $xml->regional->objects;
+  */
+  foreach($xml->children() as $thing){
+    if($model_type == $thing->getName()){
+      $model = $thing->objects;
+      break;
+    }
+  }
+
+
   foreach($model->children() as $object){
     if($stray_bool)
     $form->appendChild($dom->createElement('hr')); //form horizontal ruler
