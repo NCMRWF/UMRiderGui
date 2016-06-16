@@ -47,9 +47,16 @@ fclose($cfgfile);
   $umtype = trim($model_type);
   $filewrite .= 'UMType = '.$model_type.PHP_EOL;
 
-  if($model_type == 'global') $model = $xml->global->objects;
-  if($model_type == 'ensemble') $model = $xml->ensemble->objects;
-  if($model_type == 'regional') $model = $xml->regional->objects;
+  //if($model_type == 'global') $model = $xml->global->objects;
+  //if($model_type == 'ensemble') $model = $xml->ensemble->objects;
+  //if($model_type == 'regional') $model = $xml->regional->objects;
+  foreach($xml->children() as $thing){
+    if($model_type == $thing->getName()){
+      $model = $thing->objects;
+      break;
+    }
+  }
+
   foreach($model->children() as $object){
     $ob_label = trim($object->label);             //object label
     $ob_type = trim($object->inputType);          //object type
