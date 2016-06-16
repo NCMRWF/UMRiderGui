@@ -158,7 +158,7 @@
 
   $style = $dom->createElement('style', $css_text);
   $dom->appendChild($style);
-
+  //styling ends here
   //=========================================================================//
 
 
@@ -211,8 +211,11 @@
   //PARSING AND ADDING THE OBJECTS BELOW
   $stray_bool = 0;
   //$model_type = $model_file.;
-  $model_file = fopen('umtype.txt', 'r');
-  $model_type = fgets($model_file);
+  //$model_file = fopen('umtype.txt', 'r');
+  //$model_type = fgets($model_file);
+  //fclose($model_file);
+  $model_type = $_POST['model_type'];
+  file_put_contents('umtype.txt', $model_type);   // for the form_processor
   $model = $xml->global;
   if($model_type == 'global') $model = $xml->global->objects;
   if($model_type == 'ensemble') $model = $xml->ensemble->objects;
@@ -272,7 +275,7 @@
       $attr->value = ' '.$ob_label;                 //label is specified in the xml file, becomes identity name && field description
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -331,6 +334,7 @@
       $attr->value = $ob_label;
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
+
       $values = $object->validVals;
       $select = $dom->createElement('select');
       $attr = $dom->createAttribute('name');
@@ -408,7 +412,7 @@
       $attr->value = $ob_type;
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -445,7 +449,7 @@
       $attr->value = ' any positive integer';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -488,7 +492,7 @@
       $attr->value = ' any integer';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -528,7 +532,7 @@
       $attr->value = ' upto 6 decimal digits';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
@@ -601,7 +605,7 @@
       $attr->value = ' password';
       $input->appendChild($attr);
       $attr = $dom->createAttribute('style');
-      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px;";
+      $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
       $input->appendChild($attr);
       if(isset($ob_script)){
         $attr = $dom->createAttribute('onchange');
