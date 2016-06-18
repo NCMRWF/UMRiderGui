@@ -1,267 +1,267 @@
 <?xml version="1.0"?>
 <varlist>
   <var>
-    <name>'geopotential_height'</name>
-    <stash>'m01s16i202'</stash>
+    <name>geopotential_height</name>
+    <stash>m01s16i202</stash>
   </var>
   <var>
-    <name>'x_wind'</name>
-    <stash>'m01s15i201'</stash>
+    <name>x_wind</name>
+    <stash>m01s15i201</stash>
   </var>
   <var>
-    <name>'y_wind'</name>
-    <stash>'m01s15i202'</stash>
+    <name>y_wind</name>
+    <stash>m01s15i202</stash>
   </var>
   <var>
-    <name>'upward_air_velocity'</name>
-    <stash>'m01s15i242'</stash>
+    <name>upward_air_velocity</name>
+    <stash>m01s15i242</stash>
   </var>
   <var>
-    <name>'air_temperature'</name>
-    <stash>'m01s16i203'</stash>
+    <name>air_temperature</name>
+    <stash>m01s16i203</stash>
   </var>
   <var>
-    <name>'relative_humidity'</name>
-    <stash>'m01s16i256'</stash>
+    <name>relative_humidity</name>
+    <stash>m01s16i256</stash>
   </var>
   <var>
-    <name>'specific_humidity'</name>
-    <stash>'m01s30i205'</stash>
+    <name>specific_humidity</name>
+    <stash>m01s30i205</stash>
   </var>
   <var>
-    <name>'tropopause_altitude'</name>
-    <stash>'m01s30i453'</stash>
+    <name>tropopause_altitude</name>
+    <stash>m01s30i453</stash>
   </var>
   <var>
-    <name>'tropopause_air_temperature'</name>
-    <stash>'m01s30i452'</stash>
+    <name>tropopause_air_temperature</name>
+    <stash>m01s30i452</stash>
   </var>
   <var>
-    <name>'tropopause_air_pressure'</name>
-    <stash>'m01s30i451'</stash>
+    <name>tropopause_air_pressure</name>
+    <stash>m01s30i451</stash>
   </var>
   <var>
-    <name>'surface_air_pressure'</name>
-    <stash>'m01s00i409'</stash>
+    <name>surface_air_pressure</name>
+    <stash>m01s00i409</stash>
   </var>
   <var>
-    <name>'air_pressure_at_sea_level'</name>
-    <stash>'m01s16i222'</stash>
+    <name>air_pressure_at_sea_level</name>
+    <stash>m01s16i222</stash>
   </var>
   <var>
-    <name>'surface_temperature'</name>
-    <stash>'m01s00i024'</stash>
+    <name>surface_temperature</name>
+    <stash>m01s00i024</stash>
   </var>
   <var>
-    <name>'relative_humidity'</name>
-    <stash>'m01s03i245'</stash>
+    <name>relative_humidity</name>
+    <stash>m01s03i245</stash>
   </var>
   <var>
-    <name>'specific_humidity'</name>
-    <stash>'m01s03i237'</stash>
+    <name>specific_humidity</name>
+    <stash>m01s03i237</stash>
   </var>
   <var>
-    <name>'air_temperature'</name>
-    <stash>'m01s03i236'</stash>
+    <name>air_temperature</name>
+    <stash>m01s03i236</stash>
   </var>
   <var>
-    <name>'dew_point_temperature'</name>
-    <stash>'m01s03i250'</stash>
+    <name>dew_point_temperature</name>
+    <stash>m01s03i250</stash>
   </var>
   <var>
-    <name>'atmosphere_convective_available_potential_energy_wrt_surface'</name>
-    <stash>'m01s05i233'</stash>
+    <name>atmosphere_convective_available_potential_energy_wrt_surface</name>
+    <stash>m01s05i233</stash>
   </var>
   <var>
-    <name>'atmosphere_convective_inhibition_wrt_surface'</name>
-    <stash>'m01s05i234'</stash>
+    <name>atmosphere_convective_inhibition_wrt_surface</name>
+    <stash>m01s05i234</stash>
   </var>
   <var>
-    <name>'high_type_cloud_area_fraction'</name>
-    <stash>'m01s09i205'</stash>
+    <name>high_type_cloud_area_fraction</name>
+    <stash>m01s09i205</stash>
   </var>
   <var>
-    <name>'medium_type_cloud_area_fraction'</name>
-    <stash>'m01s09i204'</stash>
+    <name>medium_type_cloud_area_fraction</name>
+    <stash>m01s09i204</stash>
   </var>
   <var>
-    <name>'low_type_cloud_area_fraction'</name>
-    <stash>'m01s09i203'</stash>
+    <name>low_type_cloud_area_fraction</name>
+    <stash>m01s09i203</stash>
   </var>
   <var>
-    <name>'cloud_area_fraction_assuming_random_overlap'</name>
-    <stash>'m01s09i216'</stash>
+    <name>cloud_area_fraction_assuming_random_overlap</name>
+    <stash>m01s09i216</stash>
   </var>
   <var>
-    <name>'cloud_area_fraction_assuming_maximum_random_overlap'</name>
-    <stash>'m01s09i217'</stash>
+    <name>cloud_area_fraction_assuming_maximum_random_overlap</name>
+    <stash>m01s09i217</stash>
   </var>
   <var>
-    <name>'atmosphere_cloud_liquid_water_content'</name>
-    <stash>'m01s30i405'</stash>
+    <name>atmosphere_cloud_liquid_water_content</name>
+    <stash>m01s30i405</stash>
   </var>
   <var>
-    <name>'atmosphere_cloud_ice_content'</name>
-    <stash>'m01s30i406'</stash>
+    <name>atmosphere_cloud_ice_content</name>
+    <stash>m01s30i406</stash>
   </var>
   <var>
-    <name>'atmosphere_mass_content_of_water'</name>
-    <stash>'m01s30i404'</stash>
+    <name>atmosphere_mass_content_of_water</name>
+    <stash>m01s30i404</stash>
   </var>
   <var>
-    <name>'atmosphere_mass_content_of_dust_dry_aerosol_particles'</name>
-    <stash>'m01s30i403'</stash>
+    <name>atmosphere_mass_content_of_dust_dry_aerosol_particles</name>
+    <stash>m01s30i403</stash>
   </var>
   <var>
-    <name>'atmosphere_precipitable_water_content'</name>
-    <stash>'None'</stash>
+    <name>atmosphere_precipitable_water_content</name>
+    <stash>None</stash>
   </var>
   <var>
-    <name>'x_wind'</name>
-    <stash>'m01s03i225'</stash>
+    <name>x_wind</name>
+    <stash>m01s03i225</stash>
   </var>
   <var>
-    <name>'y_wind'</name>
-    <stash>'m01s03i226'</stash>
+    <name>y_wind</name>
+    <stash>m01s03i226</stash>
   </var>
   <var>
-    <name>'visibility_in_air'</name>
-    <stash>'m01s03i247'</stash>
+    <name>visibility_in_air</name>
+    <stash>m01s03i247</stash>
   </var>
   <var>
-    <name>'precipitation_amount'</name>
-    <stash>'m01s05i226'</stash>
+    <name>precipitation_amount</name>
+    <stash>m01s05i226</stash>
   </var>
   <var>
-    <name>'stratiform_snowfall_amount'</name>
-    <stash>'m01s04i202'</stash>
+    <name>stratiform_snowfall_amount</name>
+    <stash>m01s04i202</stash>
   </var>
   <var>
-    <name>'convective_snowfall_amount'</name>
-    <stash>'m01s05i202'</stash>
+    <name>convective_snowfall_amount</name>
+    <stash>m01s05i202</stash>
   </var>
   <var>
-    <name>'stratiform_rainfall_amount'</name>
-    <stash>'m01s04i201'</stash>
+    <name>stratiform_rainfall_amount</name>
+    <stash>m01s04i201</stash>
   </var>
   <var>
-    <name>'convective_rainfall_amount'</name>
-    <stash>'m01s05i201'</stash>
+    <name>convective_rainfall_amount</name>
+    <stash>m01s05i201</stash>
   </var>
   <var>
-    <name>'rainfall_flux'</name>
-    <stash>'m01s05i214'</stash>
+    <name>rainfall_flux</name>
+    <stash>m01s05i214</stash>
   </var>
   <var>
-    <name>'snowfall_flux'</name>
-    <stash>'m01s05i215'</stash>
+    <name>snowfall_flux</name>
+    <stash>m01s05i215</stash>
   </var>
   <var>
-    <name>'precipitation_flux'</name>
-    <stash>'m01s05i216'</stash>
+    <name>precipitation_flux</name>
+    <stash>m01s05i216</stash>
   </var>
   <var>
-    <name>'fog_area_fraction'</name>
-    <stash>'m01s03i248'</stash>
+    <name>fog_area_fraction</name>
+    <stash>m01s03i248</stash>
   </var>
   <var>
-    <name>'toa_incoming_shortwave_flux'</name>
-    <stash>'m01s01i207'</stash>
+    <name>toa_incoming_shortwave_flux</name>
+    <stash>m01s01i207</stash>
   </var>
   <var>
-    <name>'toa_outgoing_shortwave_flux'</name>
-    <stash>'m01s01i205'</stash>
+    <name>toa_outgoing_shortwave_flux</name>
+    <stash>m01s01i205</stash>
   </var>
   <var>
-    <name>'toa_outgoing_shortwave_flux_assuming_clear_sky'</name>
-    <stash>'m01s01i209'</stash>
+    <name>toa_outgoing_shortwave_flux_assuming_clear_sky</name>
+    <stash>m01s01i209</stash>
   </var>
   <var>
-    <name>'toa_outgoing_longwave_flux'</name>
-    <stash>'m01s02i205'</stash>
+    <name>toa_outgoing_longwave_flux</name>
+    <stash>m01s02i205</stash>
   </var>
   <var>
-    <name>'toa_outgoing_longwave_flux_assuming_clear_sky'</name>
-    <stash>'m01s02i206'</stash>
+    <name>toa_outgoing_longwave_flux_assuming_clear_sky</name>
+    <stash>m01s02i206</stash>
   </var>
   <var>
-    <name>'surface_upward_latent_heat_flux'</name>
-    <stash>'m01s03i234'</stash>
+    <name>surface_upward_latent_heat_flux</name>
+    <stash>m01s03i234</stash>
   </var>
   <var>
-    <name>'surface_upward_sensible_heat_flux'</name>
-    <stash>'m01s03i217'</stash>
+    <name>surface_upward_sensible_heat_flux</name>
+    <stash>m01s03i217</stash>
   </var>
   <var>
-    <name>'surface_downwelling_shortwave_flux_in_air'</name>
-    <stash>'m01s01i235'</stash>
+    <name>surface_downwelling_shortwave_flux_in_air</name>
+    <stash>m01s01i235</stash>
   </var>
   <var>
-    <name>'surface_downwelling_longwave_flux'</name>
-    <stash>'m01s02i207'</stash>
+    <name>surface_downwelling_longwave_flux</name>
+    <stash>m01s02i207</stash>
   </var>
   <var>
-    <name>'surface_net_downward_longwave_flux'</name>
-    <stash>'m01s02i201'</stash>
+    <name>surface_net_downward_longwave_flux</name>
+    <stash>m01s02i201</stash>
   </var>
   <var>
-    <name>'surface_net_downward_shortwave_flux'</name>
-    <stash>'m01s01i202'</stash>
+    <name>surface_net_downward_shortwave_flux</name>
+    <stash>m01s01i202</stash>
   </var>
   <var>
-    <name>'surface_upwelling_longwave_flux_in_air'</name>
-    <stash>'None'</stash>
+    <name>surface_upwelling_longwave_flux_in_air</name>
+    <stash>None</stash>
   </var>
   <var>
-    <name>'surface_upwelling_shortwave_flux_in_air'</name>
-    <stash>'None'</stash>
+    <name>surface_upwelling_shortwave_flux_in_air</name>
+    <stash>None</stash>
   </var>
   <var>
-    <name>'atmosphere_boundary_layer_thickness'</name>
-    <stash>'m01s00i025'</stash>
+    <name>atmosphere_boundary_layer_thickness</name>
+    <stash>m01s00i025</stash>
   </var>
   <var>
-    <name>'atmosphere_optical_thickness_due_to_dust_ambient_aerosol'</name>
-    <stash>'m01s02i422'</stash>
+    <name>atmosphere_optical_thickness_due_to_dust_ambient_aerosol</name>
+    <stash>m01s02i422</stash>
   </var>
   <var>
-    <name>'moisture_content_of_soil_layer'</name>
-    <stash>'m01s08i223')</stash>
+    <name>moisture_content_of_soil_layer</name>
+    <stash>m01s08i223')</stash>
   </var>
   <var>
-    <name>'soil_moisture_content'</name>
-    <stash>'m01s08i208')</stash>
+    <name>soil_moisture_content</name>
+    <stash>m01s08i208')</stash>
   </var>
   <var>
-    <name>'volumetric_moisture_of_soil_layer'</name>
-    <stash>'m01s08i223')</stash>
+    <name>volumetric_moisture_of_soil_layer</name>
+    <stash>m01s08i223')</stash>
   </var>
   <var>
-    <name>'volumetric_moisture_of_soil_layer'</name>
-    <stash>'m01s08i208')</stash>
+    <name>volumetric_moisture_of_soil_layer</name>
+    <stash>m01s08i208')</stash>
   </var>
   <var>
-    <name>'soil_temperature'</name>
-    <stash>'m01s03i238'</stash>
+    <name>soil_temperature</name>
+    <stash>m01s03i238</stash>
   </var>
   <var>
-    <name>'sea_ice_area_fraction'</name>
-    <stash>'m01s00i031'</stash>
+    <name>sea_ice_area_fraction</name>
+    <stash>m01s00i031</stash>
   </var>
   <var>
-    <name>'sea_ice_thickness'</name>
-    <stash>'m01s00i032'</stash>
+    <name>sea_ice_thickness</name>
+    <stash>m01s00i032</stash>
   </var>
   <var>
-    <name>'liquid_water_content_of_surface_snow'</name>
-    <stash>'m01s00i023'</stash>
+    <name>liquid_water_content_of_surface_snow</name>
+    <stash>m01s00i023</stash>
   </var>
   <var>
-    <name>'land_binary_mask'</name>
-    <stash>'m01s00i030'</stash>
+    <name>land_binary_mask</name>
+    <stash>m01s00i030</stash>
   </var>
   <var>
-    <name>'surface_altitude'</name>
-    <stash>'m01s00i033'</stash>
+    <name>surface_altitude</name>
+    <stash>m01s00i033</stash>
   </var>
 </varlist>
