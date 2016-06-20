@@ -216,7 +216,13 @@
   //fclose($model_file);
   $model_type = $_POST['model_type'];
   file_put_contents('umtype.txt', $model_type);   // for the form_processor
-  $model = $xml->global;
+  //$start_date = $_POST['Start date'];
+  //$end_date = $_POST['End date'];
+  file_put_contents('startdate.txt', $_POST['Start_date']);
+  file_put_contents('enddate.txt', $_POST['End_date']);
+
+
+  $model = $xml->global;    //default
   /*
   if($model_type == 'global') $model = $xml->global->objects;
   if($model_type == 'ensemble') $model = $xml->ensemble->objects;
@@ -271,7 +277,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
 
@@ -308,7 +314,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $values = $object->validVals;
@@ -341,7 +347,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
 
@@ -374,7 +380,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $values = $object->validVals;
@@ -411,7 +417,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
@@ -442,7 +448,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
@@ -481,7 +487,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');
@@ -525,7 +531,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');          //render float/ decimal values upto 6 decimal places
@@ -564,7 +570,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $values = array('True', 'False');
@@ -601,7 +607,7 @@
       $attr->value = 'hidden';
       $hidden_descript->appendChild($attr);
       $attr = $dom->createAttribute('id');
-      $attr->value = $ob_label;
+      $attr->value = $ob_label." : ";
       $hidden_descript->appendChild($attr);
       $dom->appendChild($hidden_descript);
       $input = $dom->createElement('input');

@@ -142,8 +142,48 @@ $form->appendChild($attr);                            //done making form attribu
 $div->appendChild($form);                             //append the form to dom right here.
 
 
+
+$dates = array('Start_date', 'End_date');
+foreach($dates as $date){
+  /*
+  $hidden_descript = $dom->createElement('input');
+  $attr = $dom->createAttribute('value');
+  $attr->value = $ob_descript;
+  $hidden_descript->appendChild($attr);
+  $attr = $dom->createAttribute('type');
+  $attr->value = 'hidden';
+  $hidden_descript->appendChild($attr);
+  $attr = $dom->createAttribute('id');
+  $attr->value = $date;
+  $hidden_descript->appendChild($attr);
+  $dom->appendChild($hidden_descript);
+  */
+  $label =  $dom->createElement('h4', ($date.' : '));  //option text as label
+  $form->appendChild($label);
+
+  $input = $dom->createElement('input');
+  $attr = $dom->createAttribute('name');
+  $attr->value = $date;
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('type');
+  $attr->value = 'date';
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('style');
+  $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('required');
+  $input->appendChild($attr);
+  $form->appendChild($input);               //append  input
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br'));   // line breaker
+}
+
+
+
+$form->appendChild($dom->createElement('hr')); //form horizontal ruler
+$label =  $dom->createElement('h4', 'Choose UM Type :');  //option text as label
+$form->appendChild($label);
 $values = array('regional', 'ensemble', 'global');
-$form->appendChild($dom->createElement('br')); // line breaker
 foreach($values as $val){
   //echo $val." ";
   $input = $dom->createElement('input');

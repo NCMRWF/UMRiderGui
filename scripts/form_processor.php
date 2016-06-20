@@ -135,10 +135,15 @@ $dom->appendChild($style);
   $filewrite = "";                              //the string to be written to the file
   $cfgfile = fopen($OUTPUT_FILE, "w");
   $Jscript = file_get_contents($VALIDATOR_JS);
+
   $model_type = file_get_contents('umtype.txt');
   $umtype = trim($model_type);
   $filewrite .= 'UMType = '.$model_type.PHP_EOL;
 
+  $start_date =  date('Ymd', strtotime(trim(file_get_contents('startdate.txt'))));
+  $end_date = date('Ymd', strtotime(trim(file_get_contents('enddate.txt'))));
+  $filewrite .= 'startdate = '.$start_date.PHP_EOL;
+  $filewrite .= 'enddate = '.$end_date.PHP_EOL;
   //if($model_type == 'global') $model = $xml->global->objects;
   //if($model_type == 'ensemble') $model = $xml->ensemble->objects;
   //if($model_type == 'regional') $model = $xml->regional->objects;
