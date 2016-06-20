@@ -43,7 +43,7 @@
 
 
   //=========================================================================//
-  fopen($VALIDATOR_JS, 'r');
+
   $Jscript = file_get_contents($VALIDATOR_JS);
 
   /*
