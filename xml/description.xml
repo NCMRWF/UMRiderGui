@@ -9,6 +9,7 @@
 
 
 <global>
+<varsfile> vars_description.xml </varsfile>
 <objects>
 
   <object>
@@ -95,9 +96,9 @@
   </object>
 
   <object>
-    <label> UMType6 </label>
+    <label> createGrib2CtlIdxFiles </label>
     <description> This is description </description>
-    <inputType> integer </inputType>
+    <inputType> boolean </inputType>
     <script></script>
     <validVals>
       <validVal> regional2 </validVal>
@@ -147,6 +148,7 @@
 
 
 <ensemble>
+  <varsfile> vars_description.xml  </varsfile>
 <objects>
 
   <object>
@@ -209,6 +211,7 @@
 
 
 <regional>
+  <varsfile> vars_description.xml  </varsfile>
 <objects>
 
   <object>
