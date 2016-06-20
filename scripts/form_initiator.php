@@ -5,6 +5,8 @@
 $FORM_HANDLER = 'form_builder.php';
 $FORM_HEADER  = 'CHOOSE THE UMTYPE';
 $FORM_CSS     = 'styler.css';
+$VALIDATOR_JS = 'validator.js';
+$Jscript = file_get_contents($VALIDATOR_JS);
 //=========================================================================//
 //styling constants
 $HEADER_FONT_LINK =  'https://fonts.googleapis.com/css?family=Titillium+Web:300';
@@ -14,8 +16,8 @@ $SUBMIT_FONT_LINK = 'https://fonts.googleapis.com/css?family=Oswald:700';
 //load the xml file to read the object's format from.
 //=========================================================================//
 
-
-
+if(file_exists('setup.cfg')) unlink('setup.cfg');
+if(file_exists('vars.cfg')) unlink('vars.cfg');
 
 $dom = new DOMDocument('0.0');
 
@@ -140,7 +142,8 @@ $form->appendChild($attr);                            //done making form attribu
 $div->appendChild($form);                             //append the form to dom right here.
 
 
-$values = array('global', 'regional', 'ensemble');
+$values = array('regional', 'ensemble', 'global');
+$form->appendChild($dom->createElement('br')); // line breaker
 foreach($values as $val){
   //echo $val." ";
   $input = $dom->createElement('input');
@@ -153,12 +156,24 @@ foreach($values as $val){
   $attr = $dom->createAttribute('value');          //get the value of the radio button for each $val
   $attr->value = trim($val);
   $input->appendChild($attr);
+  $attr = $dom->createAttribute('checked');
+  $attr->value = 'checked';
+  $input->appendChild($attr);
 
   $form->appendChild($input);                      //append each and every radio input button
   $label =  $dom->createElement('label', ($val));  //option text as label
   $form->appendChild($label);
   $form->appendChild($dom->createElement('br'));   // line breaker
+  $form->appendChild($dom->createElement('br'));   // line breaker
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -172,11 +187,11 @@ $attr = $dom->createAttribute('value');
 $attr->value = 'PROCEED';
 $input->appendChild($attr);
 $attr = $dom->createAttribute('style');
-$attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 37.9%; font-size: 100%;";
+$attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 42.9%; font-size: 100%;";
 $input->appendChild($attr);
 $form->appendChild($input);
 
-
+/*
 // form was already appended to the div which was appended to dom before.
 $form->appendChild($dom->createElement('br')); // line breaker
 $form->appendChild($dom->createElement('br')); // line breaker
@@ -191,9 +206,12 @@ $attr = $dom->createAttribute('style');
 $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 38.7%; font-size: 100%;";
 $input->appendChild($attr);
 $form->appendChild($input);
+*/
 $form->appendChild($dom->createElement('br')); // line breaker
 $form->appendChild($dom->createElement('br')); // line breaker
 
+$script = $dom->createElement('script', $Jscript);
+$dom->appendChild($script);
 
 echo $dom->saveHTML();  //run the html in the browser
 
