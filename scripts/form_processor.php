@@ -244,6 +244,39 @@ $dom->appendChild($style);
   $dom->appendChild($form);
   $form->appendChild($dom->createElement('br')); // line breaker
 
+
+  $button = $dom->createElement('input');
+  $attr = $dom->createAttribute('type');
+  $attr->value = 'button';
+  $button->appendChild($attr);
+  $attr = $dom->createAttribute('onclick');
+  $attr->value = 'check_all()';
+  $button->appendChild($attr);
+  $attr = $dom->createAttribute('value');
+  $attr->value = 'Select ALL';
+  $button->appendChild($attr);
+  $attr = $dom->createAttribute('style');
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 37.9%; font-size: 100%;";
+  $button->appendChild($attr);
+  $form->appendChild($button);
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $input = $dom->createElement('input');
+  $attr = $dom->createAttribute('type');
+  $attr->value = 'reset';
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('value');
+  $attr->value = 'Reset ALL';
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('style');
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 37.9%; font-size: 100%;";
+  $input->appendChild($attr);
+  $form->appendChild($input);
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+  $form->appendChild($dom->createElement('br')); // line breaker
+
   foreach($xml->children() as $var){
     $name = trim($var->name);
     $stash = trim($var->stash);
@@ -271,9 +304,11 @@ $dom->appendChild($style);
     $input->appendChild($attr);
     $attr = $dom->createAttribute('value');
     $attr->value = '('.$name.', '.$stash.')';
+    /*
     $input->appendChild($attr);
     $attr = $dom->createAttribute('checked');
     $input->appendChild($attr);
+    */
     $form->appendChild($input);
     $label = $dom->createElement('label', $name.'  :  '.$stash);
     $attr = $dom->createAttribute('onmouseover');
@@ -297,6 +332,7 @@ $dom->appendChild($style);
   $form->appendChild($input);
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($dom->createElement('br')); // line breaker
+
 
 
   //=========================================================================//
