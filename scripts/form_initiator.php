@@ -143,6 +143,7 @@ $div->appendChild($form);                             //append the form to dom r
 
 
 
+
 $dates = array('Start_date', 'End_date');
 foreach($dates as $date){
   /*
@@ -167,6 +168,9 @@ foreach($dates as $date){
   $input->appendChild($attr);
   $attr = $dom->createAttribute('type');
   $attr->value = 'date';
+  $input->appendChild($attr);
+  $attr = $dom->createAttribute('onblur');
+  $attr->value = 'datechecker(this)';
   $input->appendChild($attr);
   $attr = $dom->createAttribute('style');
   $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
@@ -210,13 +214,6 @@ foreach($values as $val){
 
 
 
-
-
-
-
-
-
-
 $form->appendChild($dom->createElement('br')); // line breaker
 //submit button
 $input = $dom->createElement('input');
@@ -250,8 +247,23 @@ $form->appendChild($input);
 $form->appendChild($dom->createElement('br')); // line breaker
 $form->appendChild($dom->createElement('br')); // line breaker
 
+$hidden = $dom->createElement('input');
+$attr = $dom->createAttribute('type');
+$attr->value = 'hidden';
+$hidden->appendChild($attr);
+$attr = $dom->createAttribute('value');
+$attr->value = date('Y-m-d');
+$hidden->appendChild($attr);
+$attr = $dom->createAttribute('id');
+$attr->value = 'checkdate';
+$hidden->appendChild($attr);
+$dom->appendChild($hidden);
+
+
 $script = $dom->createElement('script', $Jscript);
 $dom->appendChild($script);
+
+
 
 echo $dom->saveHTML();  //run the html in the browser
 
