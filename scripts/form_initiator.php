@@ -144,6 +144,34 @@ $div->appendChild($form);                             //append the form to dom r
 
 
 
+
+$form->appendChild($dom->createElement('br'));   // line breaker
+$form->appendChild($dom->createElement('br'));   // line breaker
+/*
+$input = $dom->createElement('input');
+$attr =  $dom->createAttribute('type');
+$attr->value = 'button';
+$input->appendChild($attr);
+$attr =  $dom->createAttribute('onclick');
+$attr->value = 'toggle_date()';
+$input->appendChild($attr);
+$attr =  $dom->createAttribute('value');
+$attr->value = 'Everyday';
+$input->appendChild($attr);
+$attr = $dom->createAttribute('style');
+$attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 7px; font-size: 100%;";
+$input->appendChild($attr);
+$form->appendChild($input);
+$form->appendChild($dom->createElement('br'));   // line breaker
+*/
+
+$label = $dom->createElement('label', 'do not fill the dates for everyday operation');
+$attr = $dom->createAttribute('style');
+$attr->value = 'position: relative; left: 4px;';
+$label->appendChild($attr);
+$form->appendChild($label);
+
+
 $dates = array('Start_date', 'End_date');
 foreach($dates as $date){
   /*
@@ -169,14 +197,16 @@ foreach($dates as $date){
   $attr = $dom->createAttribute('type');
   $attr->value = 'date';
   $input->appendChild($attr);
-  $attr = $dom->createAttribute('onblur');
+  $attr = $dom->createAttribute('onchange');
   $attr->value = 'datechecker(this)';
   $input->appendChild($attr);
   $attr = $dom->createAttribute('style');
   $attr->value = "color:#404040; font-family: 'Open Sans Condensed', sans-serif; width: 170px; font-weight: bold;";
   $input->appendChild($attr);
+  /*
   $attr = $dom->createAttribute('required');
   $input->appendChild($attr);
+  */
   $form->appendChild($input);               //append  input
   $form->appendChild($dom->createElement('br')); // line breaker
   $form->appendChild($dom->createElement('br'));   // line breaker
