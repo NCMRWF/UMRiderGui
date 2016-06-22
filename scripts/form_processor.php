@@ -140,13 +140,27 @@ $dom->appendChild($style);
   $umtype = trim($model_type);
   $filewrite .= 'UMType = '.$model_type.PHP_EOL;
 
-  $start_date =  date('Ymd', strtotime(trim(file_get_contents('startdate.txt'))));
-  $end_date = date('Ymd', strtotime(trim(file_get_contents('enddate.txt'))));
+
+
+
+  $a = file_get_contents('startdate.txt');
+  if($a!="" && $a!=NULL && $a != "YYYYMMDD")
+    $start_date =  date('Ymd', strtotime(trim($a)));
+  else $start_date = "YYYYMMDD";
+  $a = file_get_contents('enddate.txt');
+  if($a!="" && $a!=NULL && $a != 'None')
+    $end_date = date('Ymd', strtotime(trim($a)));
+  else $end_date = "None";
   $filewrite .= 'startdate = '.$start_date.PHP_EOL;
   $filewrite .= 'enddate = '.$end_date.PHP_EOL;
   //if($model_type == 'global') $model = $xml->global->objects;
   //if($model_type == 'ensemble') $model = $xml->ensemble->objects;
   //if($model_type == 'regional') $model = $xml->regional->objects;
+
+
+
+
+
   foreach($xml->children() as $thing){
     if($model_type == $thing->getName()){
       $model = $thing;
@@ -269,7 +283,7 @@ $dom->appendChild($style);
   $attr->value = 'Reset ALL';
   $input->appendChild($attr);
   $attr = $dom->createAttribute('style');
-  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 37.9%; font-size: 100%;";
+  $attr->value = "font-family: 'Oswald', sans-serif; position: relative; left: 38.17%; font-size: 100%;";
   $input->appendChild($attr);
   $form->appendChild($input);
   $form->appendChild($dom->createElement('br')); // line breaker
@@ -304,6 +318,7 @@ $dom->appendChild($style);
     $input->appendChild($attr);
     $attr = $dom->createAttribute('value');
     $attr->value = '('.$name.', '.$stash.')';
+    $input->appendChild($attr);
     /*
     $input->appendChild($attr);
     $attr = $dom->createAttribute('checked');
