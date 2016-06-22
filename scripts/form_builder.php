@@ -218,8 +218,19 @@
   file_put_contents('umtype.txt', $model_type);   // for the form_processor
   //$start_date = $_POST['Start date'];
   //$end_date = $_POST['End date'];
-  file_put_contents('startdate.txt', $_POST['Start_date']);
-  file_put_contents('enddate.txt', $_POST['End_date']);
+  //echo "hi";
+  //echo (string)($_POST['Start_date']);
+  if(isset($_POST['Start_date']) && $_POST['Start_date'] != "" && $_POST['Start_date'] != NULL){
+    file_put_contents('startdate.txt', $_POST['Start_date']);
+    if(isset($_POST['End_date']) && $_POST['End_date'] != "" && $_POST['End_date'] != NULL)
+      file_put_contents('enddate.txt', $_POST['End_date']);
+    else file_put_contents('enddate.txt', 'None');
+  }
+  else{
+    //echo " doing it ";
+    file_put_contents('startdate.txt', 'YYYYMMDD');
+    file_put_contents('enddate.txt', 'None');
+  }
 
 
   $model = $xml->global;    //default
