@@ -255,6 +255,7 @@
     // write these below 2 to a file --- option1
     // make the for reading dynamic for the form_processor.php --- option2
     $ob_label = trim($object->label);             //object label
+    $ob_label_tag = trim($object->tag);           //object tag
     $ob_type = trim($object->inputType);          //object type
     $ob_descript = trim($object->description);    //object description
     if(trim($object->script) != '' || trim($object->script) != NULL){
@@ -270,9 +271,20 @@
     $attr = $dom->createAttribute('onmouseout');
     $attr->value = 'clear_descript()';
     $label->appendChild($attr);
-
     $form->appendChild($label);
-
+    /*
+    $attr = $dom->createAttribute('hidden');
+    //$attr->value = 'clear_descript()';
+    $label->appendChild($attr);
+    */
+    /*
+    $label = $dom->createElement('label', $ob_label_tag);    //object labels in h4
+    $attr = $dom->createAttribute('style');
+    $attr->value = 'position: relative; top : -47px; float: right';
+    $label->appendChild($attr);
+    $form->appendChild($label);
+    $form->appendChild($dom->createElement('br'));   // line breaker
+    */
     //start input tag code
     //get ob_type, ob_label and values...
     //$label = $dom->createElement('h5', $ob_label." : ");
