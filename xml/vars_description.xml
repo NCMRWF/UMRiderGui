@@ -3,22 +3,23 @@
   <var>
     <name>geopotential_height</name>
     <stash>m01s16i202</stash>
-    <description> something comes up !!</description>
+    <description> natis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+      Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleife</description>
   </var>
   <var>
     <name>x_wind</name>
     <stash>m01s15i201</stash>
-    <description></description>
+    <description> vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleife</description>
   </var>
   <var>
     <name>y_wind</name>
     <stash>m01s15i202</stash>
-    <description></description>
+    <description>itae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cra</description>
   </var>
   <var>
     <name>upward_air_velocity</name>
     <stash>m01s15i242</stash>
-    <description></description>
+    <description>ifend tellus. Aenean leo ligula, poto. Nullam dictum felis eu pede mollis</description>
   </var>
   <var>
     <name>air_temperature</name>
@@ -328,6 +329,11 @@
   <var>
     <name>surface_altitude</name>
     <stash>m01s00i033</stash>
+    <description></description>
+  </var>
+  <var>
+    <name>some</name>
+    <stash>adsfsnfln</stash>
     <description></description>
   </var>
 </varlist>
