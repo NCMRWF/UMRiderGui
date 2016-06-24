@@ -131,10 +131,22 @@ $dom->appendChild($style);
   $FORM_HEADER  = 'ALL FIELDS NECCESSARY';
   $VALIDATOR_JS = 'validator.js';
   $xml = simplexml_load_file($FORMAT_XML) or die("Error: FATAL ERROR. POSSIBLY CORRUPT XML FORMAT.");
-  $FORM_HEADER = trim($xml->title);
+  $FORM_HEADER = "setup.cfg generated, please select variables for vars.cfg file";
   $filewrite = "";                              //the string to be written to the file
   $cfgfile = fopen($OUTPUT_FILE, "w");
   $Jscript = file_get_contents($VALIDATOR_JS);
+
+
+  $div = $dom->createElement('div');
+  $attr = $dom->createAttribute('class');
+  $attr->value = 'header';
+  $div->appendChild($attr);
+  $header = $dom->createElement('h1', $FORM_HEADER);
+  $div->appendChild($header);
+  $dom->appendChild($div);
+  $dom->appendChild($dom->createElement('hr')); //dom horizontal ruler
+  $dom->appendChild($dom->createElement('br'));
+
 
   $model_type = file_get_contents('umtype.txt');
   $umtype = trim($model_type);
@@ -233,7 +245,7 @@ $dom->appendChild($style);
     $filewrite = "";
 
   }//end of foreach object------------------------------------------------------
-  echo "<h3>SUCCESS: File has been created</h3>";
+  //"<h3>SUCCESS: File has been created</h3>";
   fclose($cfgfile);
   ///
   ///
@@ -246,8 +258,8 @@ $dom->appendChild($style);
   $xml = simplexml_load_file($varsxml) or die("Error: FATAL ERROR. POSSIBLY CORRUPT XML FORMAT.");
 
 
-  $header = $dom->createElement('h4', 'setup.cfg generated, please select variables for vars.cfg file');
-  $dom->appendChild($header);
+  //$header = $dom->createElement('h4', 'setup.cfg generated, please select variables for vars.cfg file');
+  //$dom->appendChild($header);
   $form = $dom->createElement('form');
   $attr = $dom->createAttribute('method');
   $attr->value = 'post';
