@@ -10,11 +10,12 @@
 
 <global>
 <varsfile> vars_description.xml </varsfile>
-
+<bsub> description_global_bsubs.xml </bsub>
 <objects>
 
 	<object>
 		<label> UMInAnlFiles </label>
+		<tag> UM analysis files </tag>
 		<description>
 		UMInAnlFiles takes list of absolute filenames which has correct analysis
 		fieldsfile/pp file of UM model valid at 00UTC.
@@ -31,6 +32,7 @@
 
 	<object>
 		<label> UMInShortFcstFiles </label>
+		<tag> UM Short forecast files </tag>
 		<description>
 		UMInShortFcstFiles takes list of partial filenames which has short forecast
 		(kind of analysis) fieldsfile/pp files of UM model produced for 00UTC, 06UTC, 12UTC, 18UTC.
@@ -51,6 +53,7 @@
 
 	<object>
 		<label> UMInLongFcstFiles </label>
+		<tag> UM long forecast files </tag>
 		<description>
 		UMInLongFcstFiles takes list of partial filenames which has long forecast
 		fieldsfile/pp file of UM model based on reference time at 00UTC, 12UTC.
@@ -71,6 +74,7 @@
 
 	<object>
 		<label> inpath </label>
+		<tag> input file path </tag>
 		<description>
 		model pp filedsfiles path
 		</description>
@@ -87,6 +91,7 @@
 
 	<object>
 		<label> outPath </label>
+		<tag> output file path </tag>
 		<description>
 		model grib2 files path
 		</description>
@@ -102,6 +107,7 @@
 
 	<object>
 		<label> tmpPath </label>
+		<tag> temp path </tag>
 		<description>
 		working directory (used to create temporary log files)
 		</description>
@@ -118,6 +124,7 @@
 
 	<object>
 		<label> anl_step_hour </label>
+		<tag> analysis step hour </tag>
 		<description>
 		analysis step/interval hours. By default it takes 6 hour which mean
 		um2grb2 produce 6 hourly instantaneous and/or 6 hourly average and/or
@@ -139,6 +146,7 @@
 
 	<object>
 		<label> anl_aavars_reference_time </label>
+		<tag> analysis aavars reference time </tag>
 		<description>
 		anl_aavars_reference_time takes either 'analysis' or 'shortforecast'. When some
 		variables are taken from previous cycle short-forecast (average/accumulation)
@@ -161,6 +169,7 @@
 
 	<object>
 		<label> anl_aavars_time_bounds </label>
+		<tag> analysis aavars time bounds </tag>
 		<description>
 		anl_aavars_time_bounds takes either 'True' or 'False'. By default, True keeps the
 		analysis time bounds, reference time bounds and False removes it (so that
@@ -181,6 +190,7 @@
 
 	<object>
 		<label> fcst_step_hour </label>
+		<tag> forecast step hour </tag>
 		<description>
 		long forecast step/interval hours . By default it
 		takes 6 hour which mean um2grb2 produce 6 hourly instantaneous and/or
@@ -203,6 +213,7 @@
 
 	<object>
 		<label> start_long_fcst_hour </label>
+		<tag> start of long forecast hour </tag>
 		<description>
 		long forecast start hour. By default it
 		takes 6 hour which mean um2grb2 produce grib2 files from 06-th hour forecasts.
@@ -222,6 +233,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_00z </label>
+		<tag> end of long forecast hour at 00 </tag>
 		<description>
 		maximum long forecast hours at 00utc cycle produced by NCUM model
 		for 10days forecast 240hour (by default 240 hours)
@@ -239,6 +251,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_12z </label>
+		<tag> end of long forecast hour at 12 </tag>
 		<description>
 		maximum long forecast hours at 12utc cycle produced by NCUM model
 		for 5days forecast 120hour (by default 120 hours)
@@ -255,6 +268,7 @@
 
 	<object>
 		<label> latitude </label>
+		<tag> latitudes </tag>
 		<description>
 		latitude is required latitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global latitudes)
@@ -274,6 +288,7 @@
 
 	<object>
 		<label> longitude </label>
+		<tag> longitudes </tag>
 		<description>
 		longitude is required longitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global longitudes)
@@ -296,6 +311,7 @@
 
 	<object>
 		<label> targetGridResolution </label>
+		<tag> target grid's resolution </tag>
 		<description>
 		targetGridResolution is resolution in degree (1 degree = 100km approx)
 		if targetGridResolution is set to None, then model resolution will be
@@ -315,6 +331,7 @@
 
 	<object>
 		<label> targetGridFile </label>
+		<tag> target of grid file </tag>
 		<description>
 		targetGridFile should be path of sample grib2 / pp / ff / nc file, which
 		contains atleast one variable with latitude, longitude informations. Model
@@ -333,6 +350,7 @@
 
 	<object>
 		<label> extraPolateMethod </label>
+		<tag> extra polation method </tag>
 		<description>
 		extraPolateMethod takes either 'auto' or 'linear' or 'mask' or iris supported
 		interpolation method. 'linear' means all variables will be linearly extrapolated
@@ -354,6 +372,7 @@
 
 	<object>
 		<label> pressureLevels </label>
+		<tag> pressure levels </tag>
 		<description>
 		pressureLevels is required pressure levels slice / extract only particular
 		set of pressure levels from model pressure levels. User can specify either
@@ -376,6 +395,7 @@
 
 	<object>
 		<label> fillFullyMaskedVars </label>
+		<tag> fill fully masked vars with </tag>
 		<description>
 		If some variable has fully masked (for eg: Incoming Shortwave flux during
 		night time) then this option value will be set to that variable. By default
@@ -394,6 +414,7 @@
 
 	<object>
 		<label> soilFirstSecondFixedSurfaceUnit </label>
+		<tag> clear description </tag>
 		<description>
 		soilFirstSecondFixedSurfaceUnit takes either 'cm' or 'mm'. By default it
 		takes 'cm' argument (suggested for general purpose/ WRF-Noah supported).
@@ -414,6 +435,7 @@
 
 	<object>
 		<label> loadg2utils </label>
+		<tag> clear description </tag>
 		<description>
 		Load g2utils from 'system' python which has installed through setup.py (OR)
 		## Load g2utils from 'local' previous directory for the operational purpose,
@@ -431,6 +453,7 @@
 
 	<object>
 		<label> overwriteFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If overwriteFiles option is 'True' then existing output final files (if any)
 		will be deleted from outPath and re-creating freshly.
@@ -453,6 +476,7 @@
 
 	<object>
 		<label> createGrib2CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If createCtlIdxFiles is True then um2grb2 module will create grads control
 		files and its index files for each and every grib2 files by using g2ctl.pl
@@ -469,6 +493,7 @@
 
 	<object>
 		<label> convertGrib2FilestoGrib1Files </label>
+		<tag> clear description </tag>
 		<description>
 		If convertGrib2FilestoGrib1Files is True then using 'cnvgrib -g21' command
 		line um2grb2 module will convert grib2 file to grib1 files.
@@ -487,6 +512,7 @@
 
 	<object>
 		<label> grib1FilesNameSuffix </label>
+		<tag> clear description </tag>
 		<description>
 		If grib1FilesNameSuffix is '.grib1', then grib1 files will endswith '.grib1' (default).
 		otherwise will whatever string assigned will be added at the end of grib1
@@ -504,6 +530,7 @@
 
 	<object>
 		<label> removeGrib2FilesAfterGrib1FilesCreated </label>
+		<tag> clear description </tag>
 		<description>
 		If removeGrib2FilesAfterGrib1FilesCreated is True, then grib2 files will be
 		deleted and kept only grib1 files. By default False.
@@ -521,6 +548,7 @@
 
 	<object>
 		<label> createGrib1CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If createCtlIdxFiles is True then um2grb2 module will create grads control     //OOOO//
 		files and its index files for each and every grib1 files by using grib2ctl.pl
@@ -537,6 +565,7 @@
 
 	<object>
 		<label> debug </label>
+		<tag> clear description </tag>
 		<description>
 		This debug option should be either True or False. This will just print
 		extra information like variables details, shape, execution process, etc.,
@@ -553,6 +582,7 @@
 
 	<object>
 		<label> setGrib2TableParameters </label>
+		<tag> clear description </tag>
 		<description>
 		setGrib2TableParameters option takes list of tuples which may contain
 		WMO-Grib2 table parameters and its value. Which means, the grib2 table
@@ -576,6 +606,7 @@
 
 	<object>
 		<label> wgrib2Arguments </label>
+		<tag> clear description </tag>
 		<description>
 		After successfully created the grib2 (final ordered variabels) file,
 		wgrib2 commnad will be executed with the 'wgrib2Arguments' options.
@@ -607,6 +638,7 @@
 
 	<object>
 		<label> callBackScript </label>
+		<tag> clear description </tag>
 		<description>
 		This callBackScript option takes any user defined script (any script)!
 		User should provide absolute or relative path of their script and make sure
@@ -636,11 +668,12 @@
 
 <regional>
 <varsfile> vars_description.xml </varsfile>
-
+<bsub> description_regional_bsubs.xml </bsub>
 <objects>
 
 	<object>
 		<label> UMInAnlFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInAnlFiles takes list of absolute filenames which has correct analysis
 		fieldsfile/pp file of UM model valid at 00UTC.
@@ -657,6 +690,7 @@
 
 	<object>
 		<label> UMInShortFcstFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInShortFcstFiles takes list of partial filenames which has short forecast
 		(kind of analysis) fieldsfile/pp files of UM model produced for 00UTC, 06UTC, 12UTC, 18UTC.
@@ -677,6 +711,7 @@
 
 	<object>
 		<label> UMInLongFcstFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInLongFcstFiles takes list of partial filenames which has long forecast
 		fieldsfile/pp file of UM model based on reference time at 00UTC, 12UTC.
@@ -697,6 +732,7 @@
 
 	<object>
 		<label> inpath </label>
+		<tag> clear description </tag>
 		<description>
 		model pp filedsfiles path
 		</description>
@@ -713,6 +749,7 @@
 
 	<object>
 		<label> outPath </label>
+		<tag> clear description </tag>
 		<description>
 		model grib2 files path
 		</description>
@@ -728,6 +765,7 @@
 
 	<object>
 		<label> tmpPath </label>
+		<tag> clear description </tag>
 		<description>
 		working directory (used to create temporary log files)
 		</description>
@@ -744,6 +782,7 @@
 
 	<object>
 		<label> anl_step_hour </label>
+		<tag> clear description </tag>
 		<description>
 		analysis step/interval hours. By default it takes 6 hour which mean
 		um2grb2 produce 6 hourly instantaneous and/or 6 hourly average and/or
@@ -765,6 +804,7 @@
 
 	<object>
 		<label> anl_aavars_reference_time </label>
+		<tag> clear description </tag>
 		<description>
 		anl_aavars_reference_time takes either 'analysis' or 'shortforecast'. When some
 		variables are taken from previous cycle short-forecast (average/accumulation)
@@ -787,6 +827,7 @@
 
 	<object>
 		<label> anl_aavars_time_bounds </label>
+		<tag> clear description </tag>
 		<description>
 		anl_aavars_time_bounds takes either 'True' or 'False'. By default, True keeps the
 		analysis time bounds, reference time bounds and False removes it (so that
@@ -807,6 +848,7 @@
 
 	<object>
 		<label> fcst_step_hour </label>
+		<tag> clear description </tag>
 		<description>
 		long forecast step/interval hours . By default it
 		takes 6 hour which mean um2grb2 produce 6 hourly instantaneous and/or
@@ -829,6 +871,7 @@
 
 	<object>
 		<label> start_long_fcst_hour </label>
+		<tag> clear description </tag>
 		<description>
 		long forecast start hour. By default it
 		takes 6 hour which mean um2grb2 produce grib2 files from 06-th hour forecasts.
@@ -848,6 +891,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_00z </label>
+		<tag> clear description </tag>
 		<description>
 		maximum long forecast hours at 00utc cycle produced by NCUM model
 		for 10days forecast 240hour (by default 240 hours)
@@ -865,6 +909,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_12z </label>
+		<tag> clear description </tag>
 		<description>
 		maximum long forecast hours at 12utc cycle produced by NCUM model
 		for 5days forecast 120hour (by default 120 hours)
@@ -881,6 +926,7 @@
 
 	<object>
 		<label> latitude </label>
+		<tag> clear description </tag>
 		<description>
 		latitude is required latitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global latitudes)
@@ -900,6 +946,7 @@
 
 	<object>
 		<label> longitude </label>
+		<tag> clear description </tag>
 		<description>
 		longitude is required longitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global longitudes)
@@ -922,6 +969,7 @@
 
 	<object>
 		<label> targetGridResolution </label>
+		<tag> clear description </tag>
 		<description>
 		targetGridResolution is resolution in degree (1 degree = 100km approx)
 		if targetGridResolution is set to None, then model resolution will be
@@ -941,6 +989,7 @@
 
 	<object>
 		<label> targetGridFile </label>
+		<tag> clear description </tag>
 		<description>
 		targetGridFile should be path of sample grib2 / pp / ff / nc file, which
 		contains atleast one variable with latitude, longitude informations. Model
@@ -959,6 +1008,7 @@
 
 	<object>
 		<label> extraPolateMethod </label>
+		<tag> clear description </tag>
 		<description>
 		extraPolateMethod takes either 'auto' or 'linear' or 'mask' or iris supported
 		interpolation method. 'linear' means all variables will be linearly extrapolated
@@ -980,6 +1030,7 @@
 
 	<object>
 		<label> pressureLevels </label>
+		<tag> clear description </tag>
 		<description>
 		pressureLevels is required pressure levels slice / extract only particular
 		set of pressure levels from model pressure levels. User can specify either
@@ -1002,6 +1053,7 @@
 
 	<object>
 		<label> fillFullyMaskedVars </label>
+		<tag> clear description </tag>
 		<description>
 		If some variable has fully masked (for eg: Incoming Shortwave flux during
 		night time) then this option value will be set to that variable. By default
@@ -1020,6 +1072,7 @@
 
 	<object>
 		<label> soilFirstSecondFixedSurfaceUnit </label>
+		<tag> clear description </tag>
 		<description>
 		soilFirstSecondFixedSurfaceUnit takes either 'cm' or 'mm'. By default it
 		takes 'cm' argument (suggested for general purpose/ WRF-Noah supported).
@@ -1040,6 +1093,7 @@
 
 	<object>
 		<label> loadg2utils </label>
+		<tag> clear description </tag>
 		<description>
 		Load g2utils from 'system' python which has installed through setup.py (OR)
 		## Load g2utils from 'local' previous directory for the operational purpose,
@@ -1057,6 +1111,7 @@
 
 	<object>
 		<label> overwriteFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If overwriteFiles option is 'True' then existing output final files (if any)
 		will be deleted from outPath and re-creating freshly.
@@ -1079,6 +1134,7 @@
 
 	<object>
 		<label> createGrib2CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If createCtlIdxFiles is True then um2grb2 module will create grads control
 		files and its index files for each and every grib2 files by using g2ctl.pl
@@ -1095,6 +1151,7 @@
 
 	<object>
 		<label> convertGrib2FilestoGrib1Files </label>
+		<tag> clear description </tag>
 		<description>
 		If convertGrib2FilestoGrib1Files is True then using 'cnvgrib -g21' command
 		line um2grb2 module will convert grib2 file to grib1 files.
@@ -1113,6 +1170,7 @@
 
 	<object>
 		<label> grib1FilesNameSuffix </label>
+		<tag> clear description </tag>
 		<description>
 		If grib1FilesNameSuffix is '.grib1', then grib1 files will endswith '.grib1' (default).
 		otherwise will whatever string assigned will be added at the end of grib1
@@ -1130,6 +1188,7 @@
 
 	<object>
 		<label> removeGrib2FilesAfterGrib1FilesCreated </label>
+		<tag> clear description </tag>
 		<description>
 		If removeGrib2FilesAfterGrib1FilesCreated is True, then grib2 files will be
 		deleted and kept only grib1 files. By default False.
@@ -1147,6 +1206,7 @@
 
 	<object>
 		<label> createGrib1CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If createCtlIdxFiles is True then um2grb2 module will create grads control     //OOOO//
 		files and its index files for each and every grib1 files by using grib2ctl.pl
@@ -1163,6 +1223,7 @@
 
 	<object>
 		<label> debug </label>
+		<tag> clear description </tag>
 		<description>
 		This debug option should be either True or False. This will just print
 		extra information like variables details, shape, execution process, etc.,
@@ -1179,6 +1240,7 @@
 
 	<object>
 		<label> setGrib2TableParameters </label>
+		<tag> clear description </tag>
 		<description>
 		setGrib2TableParameters option takes list of tuples which may contain
 		WMO-Grib2 table parameters and its value. Which means, the grib2 table
@@ -1202,6 +1264,7 @@
 
 	<object>
 		<label> wgrib2Arguments </label>
+		<tag> clear description </tag>
 		<description>
 		After successfully created the grib2 (final ordered variabels) file,
 		wgrib2 commnad will be executed with the 'wgrib2Arguments' options.
@@ -1233,6 +1296,7 @@
 
 	<object>
 		<label> callBackScript </label>
+		<tag> clear description </tag>
 		<description>
 		This callBackScript option takes any user defined script (any script)!
 		User should provide absolute or relative path of their script and make sure
@@ -1262,11 +1326,13 @@
 
 <ensemble>
 <varsfile> vars_description.xml </varsfile>
+<bsub> description_ensemble_bsubs.xml </bsub>
 
 <objects>
 
 	<object>
 		<label> UMInAnlFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInAnlFiles takes list of absolute filenames which has correct analysis
 		fieldsfile/pp file of UM model valid at 00UTC.
@@ -1283,6 +1349,7 @@
 
 	<object>
 		<label> UMInShortFcstFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInShortFcstFiles takes list of partial filenames which has short forecast
 		(kind of analysis) fieldsfile/pp files of UM model produced for 00UTC, 06UTC, 12UTC, 18UTC.
@@ -1303,6 +1370,7 @@
 
 	<object>
 		<label> UMInLongFcstFiles </label>
+		<tag> clear description </tag>
 		<description>
 		UMInLongFcstFiles takes list of partial filenames which has long forecast
 		fieldsfile/pp file of UM model based on reference time at 00UTC, 12UTC.
@@ -1323,6 +1391,7 @@
 
 	<object>
 		<label> inpath </label>
+		<tag> clear description </tag>
 		<description>
 		model pp filedsfiles path
 		</description>
@@ -1339,6 +1408,7 @@
 
 	<object>
 		<label> outPath </label>
+		<tag> clear description </tag>
 		<description>
 		model grib2 files path
 		</description>
@@ -1354,6 +1424,7 @@
 
 	<object>
 		<label> tmpPath </label>
+		<tag> clear description </tag>
 		<description>
 		working directory (used to create temporary log files)
 		</description>
@@ -1370,6 +1441,7 @@
 
 	<object>
 		<label> anl_step_hour </label>
+		<tag> clear description </tag>
 		<description>
 		analysis step/interval hours. By default it takes 6 hour which mean
 		um2grb2 produce 6 hourly instantaneous and/or 6 hourly average and/or
@@ -1391,6 +1463,7 @@
 
 	<object>
 		<label> anl_aavars_reference_time </label>
+		<tag> clear description </tag>
 		<description>
 		anl_aavars_reference_time takes either 'analysis' or 'shortforecast'. When some
 		variables are taken from previous cycle short-forecast (average/accumulation)
@@ -1413,6 +1486,7 @@
 
 	<object>
 		<label> anl_aavars_time_bounds </label>
+		<tag> clear description </tag>
 		<description>
 		anl_aavars_time_bounds takes either 'True' or 'False'. By default, True keeps the
 		analysis time bounds, reference time bounds and False removes it (so that
@@ -1433,6 +1507,7 @@
 
 	<object>
 		<label> fcst_step_hour </label>
+		<tag> clear description </tag>
 		<description>
 		long forecast step/interval hours . By default it
 		takes 6 hour which mean um2grb2 produce 6 hourly instantaneous and/or
@@ -1455,6 +1530,7 @@
 
 	<object>
 		<label> start_long_fcst_hour </label>
+		<tag> clear description </tag>
 		<description>
 		long forecast start hour. By default it
 		takes 6 hour which mean um2grb2 produce grib2 files from 06-th hour forecasts.
@@ -1474,6 +1550,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_00z </label>
+		<tag> clear description </tag>
 		<description>
 		maximum long forecast hours at 00utc cycle produced by NCUM model
 		for 10days forecast 240hour (by default 240 hours)
@@ -1491,6 +1568,7 @@
 
 	<object>
 		<label> end_long_fcst_hour_at_12z </label>
+		<tag> clear description </tag>
 		<description>
 		maximum long forecast hours at 12utc cycle produced by NCUM model
 		for 5days forecast 120hour (by default 120 hours)
@@ -1507,6 +1585,7 @@
 
 	<object>
 		<label> latitude </label>
+		<tag> clear description </tag>
 		<description>
 		latitude is required latitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global latitudes)
@@ -1526,6 +1605,7 @@
 
 	<object>
 		<label> longitude </label>
+		<tag> clear description </tag>
 		<description>
 		longitude is required longitude which user wants to extract from the model
 		global data. By default it takes None (i.e. extract model global longitudes)
@@ -1548,6 +1628,7 @@
 
 	<object>
 		<label> targetGridResolution </label>
+		<tag> clear description </tag>
 		<description>
 		targetGridResolution is resolution in degree (1 degree = 100km approx)
 		if targetGridResolution is set to None, then model resolution will be
@@ -1567,6 +1648,7 @@
 
 	<object>
 		<label> targetGridFile </label>
+		<tag> clear description </tag>
 		<description>
 		targetGridFile should be path of sample grib2 / pp / ff / nc file, which
 		contains atleast one variable with latitude, longitude informations. Model
@@ -1585,6 +1667,7 @@
 
 	<object>
 		<label> extraPolateMethod </label>
+		<tag> clear description </tag>
 		<description>
 		extraPolateMethod takes either 'auto' or 'linear' or 'mask' or iris supported
 		interpolation method. 'linear' means all variables will be linearly extrapolated
@@ -1606,6 +1689,7 @@
 
 	<object>
 		<label> pressureLevels </label>
+		<tag> clear description </tag>
 		<description>
 		pressureLevels is required pressure levels slice / extract only particular
 		set of pressure levels from model pressure levels. User can specify either
@@ -1628,6 +1712,7 @@
 
 	<object>
 		<label> fillFullyMaskedVars </label>
+		<tag> clear description </tag>
 		<description>
 		If some variable has fully masked (for eg: Incoming Shortwave flux during
 		night time) then this option value will be set to that variable. By default
@@ -1646,6 +1731,7 @@
 
 	<object>
 		<label> soilFirstSecondFixedSurfaceUnit </label>
+		<tag> clear description </tag>
 		<description>
 		soilFirstSecondFixedSurfaceUnit takes either 'cm' or 'mm'. By default it
 		takes 'cm' argument (suggested for general purpose/ WRF-Noah supported).
@@ -1666,11 +1752,12 @@
 
 	<object>
 		<label> loadg2utils </label>
+		<tag> clear description </tag>
 		<description>
 		Load g2utils from 'system' python which has installed through setup.py (OR)
-		## Load g2utils from 'local' previous directory for the operational purpose,
-		## where normal user don't have write permission to change the g2utils!
-		## So loadg2utils argument should be either system (default) or local.
+		Load g2utils from 'local' previous directory for the operational purpose,
+		where normal user don't have write permission to change the g2utils!
+		So loadg2utils argument should be either system (default) or local.
 		</description>
 		<inputType> radio </inputType>
 		<script> </script>
@@ -1683,6 +1770,7 @@
 
 	<object>
 		<label> overwriteFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If overwriteFiles option is 'True' then existing output final files (if any)
 		will be deleted from outPath and re-creating freshly.
@@ -1705,6 +1793,7 @@
 
 	<object>
 		<label> createGrib2CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
 		If createCtlIdxFiles is True then um2grb2 module will create grads control
 		files and its index files for each and every grib2 files by using g2ctl.pl
@@ -1721,6 +1810,7 @@
 
 	<object>
 		<label> convertGrib2FilestoGrib1Files </label>
+		<tag> clear description </tag>
 		<description>
 		If convertGrib2FilestoGrib1Files is True then using 'cnvgrib -g21' command
 		line um2grb2 module will convert grib2 file to grib1 files.
@@ -1739,6 +1829,7 @@
 
 	<object>
 		<label> grib1FilesNameSuffix </label>
+		<tag> clear description </tag>
 		<description>
 		If grib1FilesNameSuffix is '.grib1', then grib1 files will endswith '.grib1' (default).
 		otherwise will whatever string assigned will be added at the end of grib1
@@ -1756,6 +1847,7 @@
 
 	<object>
 		<label> removeGrib2FilesAfterGrib1FilesCreated </label>
+		<tag> clear description </tag>
 		<description>
 		If removeGrib2FilesAfterGrib1FilesCreated is True, then grib2 files will be
 		deleted and kept only grib1 files. By default False.
@@ -1773,8 +1865,9 @@
 
 	<object>
 		<label> createGrib1CtlIdxFiles </label>
+		<tag> clear description </tag>
 		<description>
-		If createCtlIdxFiles is True then um2grb2 module will create grads control     //OOOO//
+		If createCtlIdxFiles is True then um2grb2 module will create grads control
 		files and its index files for each and every grib1 files by using grib2ctl.pl
 		</description>
 		<inputType> boolean </inputType>
@@ -1789,6 +1882,7 @@
 
 	<object>
 		<label> debug </label>
+		<tag> clear description </tag>
 		<description>
 		This debug option should be either True or False. This will just print
 		extra information like variables details, shape, execution process, etc.,
@@ -1805,6 +1899,7 @@
 
 	<object>
 		<label> setGrib2TableParameters </label>
+		<tag> clear description </tag>
 		<description>
 		setGrib2TableParameters option takes list of tuples which may contain
 		WMO-Grib2 table parameters and its value. Which means, the grib2 table
@@ -1828,6 +1923,7 @@
 
 	<object>
 		<label> wgrib2Arguments </label>
+		<tag> clear description </tag>
 		<description>
 		After successfully created the grib2 (final ordered variabels) file,
 		wgrib2 commnad will be executed with the 'wgrib2Arguments' options.
@@ -1859,6 +1955,7 @@
 
 	<object>
 		<label> callBackScript </label>
+		<tag> clear description </tag>
 		<description>
 		This callBackScript option takes any user defined script (any script)!
 		User should provide absolute or relative path of their script and make sure
@@ -1883,5 +1980,665 @@
 </objects>
 
 </ensemble>
+
+
+<custom>
+<varsfile> vars_description.xml </varsfile>
+<bsub> description_global_bsubs.xml </bsub>
+
+<objects>
+
+	<object>
+		<label> UMInAnlFiles </label>
+		<tag> clear description </tag>
+		<description>
+		UMInAnlFiles takes list of absolute filenames which has correct analysis
+		fieldsfile/pp file of UM model valid at 00UTC.
+		None option will take hardcoded proper infile names.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> qwqg00.pp0 </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> UMInShortFcstFiles </label>
+		<tag> clear description </tag>
+		<description>
+		UMInShortFcstFiles takes list of partial filenames which has short forecast
+		(kind of analysis) fieldsfile/pp files of UM model produced for 00UTC, 06UTC, 12UTC, 18UTC.
+		None option will take hardcoded proper infile names.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> umglca_pb </validVal>
+			<validVal> umglca_pd </validVal>
+			<validVal> umglca_pe </validVal>
+			<validVal> umglca_pf </validVal>
+			<validVal> umglca_pi </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> UMInLongFcstFiles </label>
+		<tag> clear description </tag>
+		<description>
+		UMInLongFcstFiles takes list of partial filenames which has long forecast
+		fieldsfile/pp file of UM model based on reference time at 00UTC, 12UTC.
+		None option will take hardcoded proper infile names.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> umglaa_pb </validVal>
+			<validVal> umglaa_pd </validVal>
+			<validVal> umglaa_pe </validVal>
+			<validVal> umglaa_pf </validVal>
+			<validVal> umglaa_pi </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> inpath </label>
+		<tag> clear description </tag>
+		<description>
+		model pp filedsfiles path
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> outPath </label>
+		<tag> clear description </tag>
+		<description>
+		model grib2 files path
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> tmpPath </label>
+		<tag> clear description </tag>
+		<description>
+		working directory (used to create temporary log files)
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> anl_step_hour </label>
+		<tag> clear description </tag>
+		<description>
+		analysis step/interval hours. By default it takes 6 hour which mean
+		um2grb2 produce 6 hourly instantaneous and/or 6 hourly average and/or
+		6 hourly accumulation values analysis files.
+		If user specfied as 3 then it will extract only 3 houlry instantaneous fields.
+		By default model produced 3 hourly average/accumulation.
+		Note: the average and accumulation supports only for 6 hours!!!
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> anl_aavars_reference_time </label>
+		<tag> clear description </tag>
+		<description>
+		anl_aavars_reference_time takes either 'analysis' or 'shortforecast'. When some
+		variables are taken from previous cycle short-forecast (average/accumulation)
+		vars, the reference time need to be set as either current 'analysis' reference
+		cycle (utc) or previous cycle's 'shortforecast' reference time.
+		'shortforecast' gives exactly based on which utc that variable has processed,
+		whereas 'analysis' shift reference time utc as actual analysis utc time.
+		Note : This option applicable only to average/accumulation vars in analysis grib2 files.
+		Lets keep default option (i.e. shortforecast)
+		</description>
+		<inputType> radio </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> shortforecast </validVal>
+			<validVal> analysis </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> anl_aavars_time_bounds </label>
+		<tag> clear description </tag>
+		<description>
+		anl_aavars_time_bounds takes either 'True' or 'False'. By default, True keeps the
+		analysis time bounds, reference time bounds and False removes it (so that
+		it become instantaneous instead of average/accumulation vars).
+		False will be applicable only if anl_aavars_reference_time arg passed as 'analysis'.
+		Note : This option applicable only to average/accumulation vars in analysis grib2 files.
+		For post prodction, we keeps the time bounds on till date.
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> fcst_step_hour </label>
+		<tag> clear description </tag>
+		<description>
+		long forecast step/interval hours . By default it
+		takes 6 hour which mean um2grb2 produce 6 hourly instantaneous and/or
+		6 hourly average and/or 6 hourly accumulation values.
+		If user specfied as 3 or 24 then it will extract only 3 or 24 hourly
+		instantaneous fields and for calculate average/accumulation for 24 hourly.
+		By default model produced 3 hourly average/accumulation.
+		Note: the average and accumulation supports only for either 3 or 6 or 24 hours
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> start_long_fcst_hour </label>
+		<tag> clear description </tag>
+		<description>
+		long forecast start hour. By default it
+		takes 6 hour which mean um2grb2 produce grib2 files from 06-th hour forecasts.
+		If user wants from different hours, then they can specify it !
+		It should be multiples of 'fcst_step_hour' (see above option)!
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> end_long_fcst_hour_at_00z </label>
+		<tag> clear description </tag>
+		<description>
+		maximum long forecast hours at 00utc cycle produced by NCUM model
+		for 10days forecast 240hour (by default 240 hours)
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> end_long_fcst_hour_at_12z </label>
+		<tag> clear description </tag>
+		<description>
+		maximum long forecast hours at 12utc cycle produced by NCUM model
+		for 5days forecast 120hour (by default 120 hours)
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> latitude </label>
+		<tag> clear description </tag>
+		<description>
+		latitude is required latitude which user wants to extract from the model
+		global data. By default it takes None (i.e. extract model global latitudes)
+		User can specify their required latitude in tuple
+		For eg : latitude = (-30, 30) will extract only latitudes from 30S to 30N.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> longitude </label>
+		<tag> clear description </tag>
+		<description>
+		longitude is required longitude which user wants to extract from the model
+		global data. By default it takes None (i.e. extract model global longitudes)
+		User can specify their required longitude in tuple
+		For eg : longitude = (60, 100) will extract only longitude from 60E to 100E.
+		Note : Model requires longitude should specfied based on (0 to 360), and
+		not by (-180 to 180.) In future I may fix it, if user wish to specify
+		longitude by within range of (-180, 180)
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> targetGridResolution </label>
+		<tag> clear description </tag>
+		<description>
+		targetGridResolution is resolution in degree (1 degree = 100km approx)
+		if targetGridResolution is set to None, then model resolution will be
+		kept in the grib2 file. This must be a number or None.
+		WARNING :  targetGridResolution option will be disabled if targetGridFile enabled.
+		</description>
+		<inputType> float </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> targetGridFile </label>
+		<tag> clear description </tag>
+		<description>
+		targetGridFile should be path of sample grib2 / pp / ff / nc file, which
+		contains atleast one variable with latitude, longitude informations. Model
+		variables will be converted to this target grid file resolution including
+		spatial regrid, start-end of latitude-and-longitude.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> extraPolateMethod </label>
+		<tag> clear description </tag>
+		<description>
+		extraPolateMethod takes either 'auto' or 'linear' or 'mask' or iris supported
+		interpolation method. 'linear' means all variables will be linearly extrapolated
+		over masked regions also. 'mask' means all masked variables of model outputs,
+		will not be extrapolated over masked regions.
+		'auto' will take care properly the neccessary variabels will be extrapolated
+		over masked regions and remaining variables will be masked over mask regions.
+		'auto' options is suggested one!
+		</description>
+		<inputType> radio </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> auto </validVal>
+			<validVal> linear </validVal>
+			<validVal> mask </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> pressureLevels </label>
+		<tag> clear description </tag>
+		<description>
+		pressureLevels is required pressure levels slice / extract only particular
+		set of pressure levels from model pressure levels. User can specify either
+		one or more levels. By default it takes None, i.e. it will extract all the
+		model pressure levels.
+		For eg 1 : pressureLevels = [850]   -> extract 850 hPa only
+		For eg 2 : pressureLevels = [850, 500, 200] -> extract only 850, 500 and 200 hPa levels only.
+		Note 1 : These pressure slice levels applicable to all the pressure level variables.
+		Note 2 : At the moment pressure levels interpolation is not supported!
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> fillFullyMaskedVars </label>
+		<tag> clear description </tag>
+		<description>
+		If some variable has fully masked (for eg: Incoming Shortwave flux during
+		night time) then this option value will be set to that variable. By default
+		it takes None, which wont do anything. If it has set to 0 as value, then
+		those fully masked vars will be filled with this value.
+		</description>
+		<inputType> pinteger </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> soilFirstSecondFixedSurfaceUnit </label>
+		<tag> clear description </tag>
+		<description>
+		soilFirstSecondFixedSurfaceUnit takes either 'cm' or 'mm'. By default it
+		takes 'cm' argument (suggested for general purpose/ WRF-Noah supported).
+		For soil moisture/ soil temeperature variables depth below land surface,
+		units are initially set to either 'cm' (centimeter) or 'mm' (millimeter),
+		and finally converted to 'm' (meter) in wgrib2. But anyhow if grib2 files
+		will be ready by some other utility other than wgrib2, then this first and
+		second fixed surface units plays matter. So suggested units is 'cm'.
+		</description>
+		<inputType> radio </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> m </validVal>
+			<validVal> cm </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> loadg2utils </label>
+		<tag> clear description </tag>
+		<description>
+		Load g2utils from 'system' python which has installed through setup.py (OR)
+		Load g2utils from 'local' previous directory for the operational purpose,
+		where normal user don't have write permission to change the g2utils!
+		So loadg2utils argument should be either system (default) or local.
+		</description>
+		<inputType> radio </inputType>
+		<script> </script>
+		<validVals>
+			<validVal> local </validVal>
+			<validVal> system </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> overwriteFiles </label>
+		<tag> clear description </tag>
+		<description>
+		If overwriteFiles option is 'True' then existing output final files (if any)
+		will be deleted from outPath and re-creating freshly.
+		If overwriteFiles option is 'False' and all output final files already
+		exist in the outPath, then program will exit without re-creating the
+		output files.
+		If partially created files exist (like few hours outfiles only exist or
+		intermediate nc files) then by default make overwriteFiles option as True
+		(though False as passed to overwriteFiles option).
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> createGrib2CtlIdxFiles </label>
+		<tag> clear description </tag>
+		<description>
+		If createCtlIdxFiles is True then um2grb2 module will create grads control
+		files and its index files for each and every grib2 files by using g2ctl.pl
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> convertGrib2FilestoGrib1Files </label>
+		<tag> clear description </tag>
+		<description>
+		If convertGrib2FilestoGrib1Files is True then using 'cnvgrib -g21' command
+		line um2grb2 module will convert grib2 file to grib1 files.
+		CAUTION : it may produce invalid variables names, grib1 param code for few
+		variables which are produced by this um2grib2 conversion tool!!!
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> grib1FilesNameSuffix </label>
+		<tag> clear description </tag>
+		<description>
+		If grib1FilesNameSuffix is '.grib1', then grib1 files will endswith '.grib1' (default).
+		otherwise will whatever string assigned will be added at the end of grib1
+		file names. None will add nothing to grib1 file names at the end of it.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> removeGrib2FilesAfterGrib1FilesCreated </label>
+		<tag> clear description </tag>
+		<description>
+		If removeGrib2FilesAfterGrib1FilesCreated is True, then grib2 files will be
+		deleted and kept only grib1 files. By default False.
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+
+	<object>
+		<label> createGrib1CtlIdxFiles </label>
+		<tag> clear description </tag>
+		<description>
+		If createCtlIdxFiles is True then um2grb2 module will create grads control
+		files and its index files for each and every grib1 files by using grib2ctl.pl
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> debug </label>
+		<tag> clear description </tag>
+		<description>
+		This debug option should be either True or False. This will just print
+		extra information like variables details, shape, execution process, etc.,
+		</description>
+		<inputType> boolean </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> setGrib2TableParameters </label>
+		<tag> clear description </tag>
+		<description>
+		setGrib2TableParameters option takes list of tuples which may contain
+		WMO-Grib2 table parameters and its value. Which means, the grib2 table
+		parameter options will be overwritten as per user's setting in this option.
+		eg1 : setGrib2TableParameters = [('centre', 28), ('subCentre', 0)]
+		The above two options will be set to out grib2 files.
+		eg2 : setGrib2TableParameters = [('shapeOfTheEarth', 0)]
+		The above option will be set to out grib2 files.
+		CATUION : User must be aware on what are they setting in this option and
+		its causes in out grib2 files! By default this option takes None.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> wgrib2Arguments </label>
+		<tag> clear description </tag>
+		<description>
+		After successfully created the grib2 (final ordered variabels) file,
+		wgrib2 commnad will be executed with the 'wgrib2Arguments' options.
+		pygrib/IRIS/UMRider is able to write grib2 file with "grid_simple" packing
+		algorithm, whereas wgrib2 able to convert packing from "grid_simple" to
+		"grid_complex_spatial_differencing" by setting -set_grib_type complex2
+		option in it. The second type packing reduces file size 1/3 compare to first
+		type packing. And further can be reduced the file size, by passing
+		-set_bin_prec 12 (compatible same as ECMWF) which reduces the floating points
+		precision (which further reduces the file size 1/5 th of original of first
+		packing). By default wgrib2Arguments takes "-set_grib_type complex2 -grib_out"
+		as argument. User can override this option by including extra wgrib2 arguments
+		Or None (wgrib2 will not be executed).
+		-grib_out is important argument (to be compress, set precsion, etc)
+		http://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/speed.html
+		http://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_bin_prec.html
+		For global post out, we are not passing -set_bin_prec 12 option, because
+		we shouldnot loose floating precision information.
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+
+	<object>
+		<label> callBackScript </label>
+		<tag> clear description </tag>
+		<description>
+		This callBackScript option takes any user defined script (any script)!
+		User should provide absolute or relative path of their script and make sure
+		that script is self executable with shebang and executable permission!
+		After successfully created out grib2 files, this callBackScript will be
+		executed with possibly command line keyword arguments as follows
+		KWargs : (date, outpath, oftype, utc)
+		where '--date' -> out files processed date,
+		      '--outpath' -> out files path,
+		      '--oftype'  -> 'analysis' or 'forecast'
+		      '--utc'  -> UTC cycle value in string ('00' or '06' or '12' or '18')
+		</description>
+		<inputType> text </inputType>
+		<script> </script>
+		<validVals>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+			<validVal>  </validVal>
+		</validVals>
+		<comment> </comment>
+	</object>
+</objects>
+
+</custom>
+
+
 
 </form>
