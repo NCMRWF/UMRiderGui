@@ -217,7 +217,7 @@ foreach($dates as $date){
 $form->appendChild($dom->createElement('hr')); //form horizontal ruler
 $label =  $dom->createElement('h4', 'Choose UM Type :');  //option text as label
 $form->appendChild($label);
-$values = array('regional', 'ensemble', 'global');
+$values = array('regional', 'ensemble', 'global', 'custom');
 foreach($values as $val){
   //echo $val." ";
   $input = $dom->createElement('input');
