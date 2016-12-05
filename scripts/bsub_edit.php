@@ -1,5 +1,8 @@
 <?php
+// project: xml2web
+// author : SOMJEET DASGUPTA .  3/6/2016
 
+//=========================================================================//
 $FORM_HANDLER = "bsub_submitter.php";
 $VALIDATOR_JS = 'validator.js';
 $FORM_CSS     = 'styler.css';
@@ -15,6 +18,7 @@ $LABEL_FONT_LINK = 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:
 $SUBMIT_FONT_LINK = 'https://fonts.googleapis.com/css?family=Oswald:700';
 //load the xml file to read the object's format from.
 //=========================================================================//
+
 $link = $dom->createElement('link');
 $href = $dom->createAttribute('href');
 $href->value = $OB_LABEL_FONT_LINK;
@@ -119,10 +123,10 @@ if(isset($_POST['checklist'])){
 
 
   foreach($_POST['checklist'] as $filepath){
-    $filedata = (string)file_get_contents($filepath.".txt");// replace txt with sh when working with linux
+    $filedata = (string)file_get_contents($filepath);// replace txt with sh when working with linux
     //echo $filedata."<br>";
     $filename = end(explode("/", $filepath));
-    //echo $filename;
+
 
     $input = $dom->createElement('input');
     $attr = $dom->createAttribute('type');
@@ -163,7 +167,7 @@ if(isset($_POST['checklist'])){
   //============================================//
 
   foreach($_POST['checklist'] as $filepath){
-    $filedata = (string)file_get_contents($filepath.".txt");// replace txt with sh when working with linux
+    $filedata = (string)file_get_contents($filepath);// replace txt with sh when working with linux
     //echo $filedata."<br>";
     $filename = end(explode("/", $filepath));
     //echo $filename;
@@ -183,9 +187,7 @@ if(isset($_POST['checklist'])){
 
 
     $inputbox = $dom->createElement('textarea', $filedata);
-    //$attr = $dom->createAttribute('class');
-    //$attr->value = $filename;
-    //$inputbox->appendChild($attr);
+
     $attr = $dom->createAttribute('rows');
     $attr->value = 34;
     $inputbox->appendChild($attr);
@@ -233,7 +235,7 @@ $attr = $dom->createAttribute('style');
 $attr->value = "font-family: 'Oswald', sans-serif; font-size: 250%; position: absolute; top: 320px; left: 900px;";
 $input->appendChild($attr);
 $form->appendChild($input);
-$dom->appendChild($form); // form for hidden data is done
+$dom->appendChild($form);
 echo $dom->saveHTML();
 
 ?>
