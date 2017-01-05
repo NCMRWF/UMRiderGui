@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<varlist>
+  <var>
+    <name>geopotential_height</name>
+    <stash>m01s16i202</stash>
+    <description>
+Var : geopotential_height (Pressure Levels)
+STASH : m01s16i202
+Unit : (m)</description>
+  </var>
+  <var>
+    <name>x_wind</name>
+    <stash> m01s15i243 </stash>
+    <description>
+Var : x_wind (Pressure Levels)
+STASH : m01s15i243
+Pressure Levels
+Unit : (m s-1) </description>
+  </var>
+  <var>
+    <name>y_wind</name>
+    <stash> m01s15i244 </stash>
+    <description>
+Var : y_wind (Pressure Levels)
+STASH : m01s15i244
+Unit : (m s-1)</description>
+  </var>
+  <var>
+    <name>upward_air_velocity</name>
+    <stash>m01s15i242</stash>
+    <description>
+Var : upward_air_velocity (Pressure Levels)
+STASH : m01s15i242
+Unit : (m s-1)</description>
+  </var>
+  <var>
+    <name>air_temperature</name>
+    <stash>m01s16i203</stash>
+    <description>
+Var : air_temperature (Pressure Levels)
+STASH : m01s16i203
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>relative_humidity</name>
+    <stash>m01s16i256</stash>
+    <description>
+Var : relative_humidity (Pressure Levels)
+STASH : m01s16i256
+Unit : (%)</description>
+  </var>
+  
+<var>
+    <name> x_wind </name>
+    <stash> m01s03i209 </stash>
+    <description>
+Var : x_wind (10 meter u-wind Levels)
+STASH : m01s03i209
+Unit : (m s-1)</description>
+  </var>
+
+<var>
+    <name> y_wind </name>
+    <stash> m01s03i210 </stash>
+    <description>
+Var : y_wind (10 meter u-wind Levels)
+STASH : m01s03i210
+Unit : (m s-1)</description>
+  </var>
+
+<var>
+    <name> air_pressure_at_sea_level </name>
+    <stash> m01s16i222 </stash>
+    <description>
+Var : air_pressure_at_sea_level 
+STASH : m01s16i222
+Unit : (Pa)</description>
+  </var>
+
+<var>
+    <name> surface_air_pressure </name>
+    <stash> m01s00i409 </stash>
+    <description>
+Var : surface_air_pressure 
+STASH : m01s00i409
+Unit : (Pa)</description>
+  </var>
+  
+<var>
+    <name> air_temperature </name>
+    <stash> m01s03i236 </stash>
+    <description>
+Var : air_temperature (Surface)
+STASH : m01s03i236
+Unit : (K)</description>
+  </var>
+
+<var>
+    <name>relative_humidity</name>
+    <stash> m01s03i245 </stash>
+    <description>
+Var : relative_humidity (Surface)
+STASH : m01s03i245
+Unit : (%)</description>
+  </var>
+
+<var>
+    <name> specific_humidity </name>
+    <stash> m01s03i237 </stash>
+    <description>
+Var : specific_humidity (Surface)
+STASH : m01s03i237
+Unit : (%)</description>
+  </var>
+<var>
+    <name> precipitation_amount </name>
+    <stash> m01s05i226 </stash>
+    <description>
+Var : precipitation_amount (Surface)
+STASH : m01s05i226
+Unit : (Kg m-2)</description>
+  </var>
+  </varlist>
+
+

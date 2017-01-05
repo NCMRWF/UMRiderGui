@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<bsubfiles>
+
+<analysis>
+	<file>
+	<name>anl_00_utc</name>
+	<fullpath>ncum_global_post_anl_00Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post
+production of analysis at 00Z (grib2 files).    
+  </description>
+	<comment></comment>
+	</file>
+
+	<file>
+	<name>anl_06_utc</name>
+	<fullpath>ncum_global_post_anl_06Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post
+production of analysis at 06Z (grib2 files).       
+  </description>
+	<comment></comment>
+	</file>
+
+	<file>
+	<name>anl_12_utc</name>
+	<fullpath>ncum_global_post_anl_12Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post 
+production of analysis at 12Z (grib2 files).        
+  </description>
+	<comment></comment>
+	</file>
+	
+	<file>
+	<name>anl_18_utc</name>
+	<fullpath>ncum_global_post_anl_18Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post 
+production of analysis at 18Z (grib2 files).       
+  </description>
+	<comment></comment>
+	</file>
+</analysis>
+
+
+
+<forecast>
+	<file>
+	<name>fcst_00_utc</name>
+	<fullpath>ncum_global_post_fcst_00Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post 
+production of forecast at 00Z (grib2 files).       
+  </description>
+	<comment></comment>
+	</file>
+
+	<file>
+	<name>fcst_12_utc</name>
+	<fullpath>ncum_global_post_fcst_12Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum global post 
+production of forecast at 12Z (grib2 files).        
+  </description>
+	<comment></comment>
+	</file>
+</forecast>
+
+</bsubfiles>

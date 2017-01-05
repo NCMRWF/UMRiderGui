@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<varlist>
+  <var>
+    <name>geopotential_height</name>
+    <stash>m01s16i202</stash>
+    <description>
+Var : geopotential_height (Pressure Levels)
+STASH : m01s16i202
+Unit : (m)</description>
+  </var>
+  <var>
+    <name>x_wind</name>
+    <stash>m01s15i201</stash>
+    <description>
+Var : x_wind (Pressure Levels)
+STASH : m01s15i201
+Pressure Levels
+Unit : (m s-1) </description>
+  </var>
+  <var>
+    <name>y_wind</name>
+    <stash>m01s15i202</stash>
+    <description>
+Var : y_wind (Pressure Levels)
+STASH : m01s15i202
+Unit : (m s-1)</description>
+  </var>
+  <var>
+    <name>upward_air_velocity</name>
+    <stash>m01s15i242</stash>
+    <description>
+Var : upward_air_velocity (Pressure Levels)
+STASH : m01s15i242
+Unit : (m s-1)</description>
+  </var>
+  <var>
+    <name>air_temperature</name>
+    <stash>m01s16i203</stash>
+    <description>
+Var : air_temperature (Pressure Levels)
+STASH : m01s16i203
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>relative_humidity</name>
+    <stash>m01s16i256</stash>
+    <description>
+Var : relative_humidity (Pressure Levels)
+STASH : m01s16i256
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>specific_humidity</name>
+    <stash>m01s30i205</stash>
+    <description>
+Var : specific_humidity (Pressure Levels)
+STASH : m01s30i205
+Unit : (1)</description>
+  </var>
+  <var>
+    <name>tropopause_altitude</name>
+    <stash>m01s30i453</stash>
+    <description>
+Var : tropopause_altitude 
+STASH : m01s30i453
+Unit : (m)</description>
+  </var>
+  <var>
+    <name>tropopause_air_temperature</name>
+    <stash>m01s30i452</stash>
+    <description>
+Var : tropopause_air_temperature 
+STASH : m01s30i452
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>tropopause_air_pressure</name>
+    <stash>m01s30i451</stash>
+    <description>
+Var : tropopause_air_pressure 
+STASH : m01s30i451
+Unit : (Pa)</description>
+  </var>
+  <var>
+    <name>surface_air_pressure</name>
+    <stash>m01s00i409</stash>
+    <description>
+Var : surface_air_pressure 
+STASH : m01s00i409
+Unit : (Pa)</description>
+  </var>
+  <var>
+    <name>air_pressure_at_sea_level</name>
+    <stash>m01s16i222</stash>
+    <description>
+Var : air_pressure_at_sea_level 
+STASH : m01s16i222
+Unit : (Pa)</description>
+  </var>
+  <var>
+    <name>surface_temperature</name>
+    <stash>m01s00i024</stash>
+    <description>
+Var : surface_temperature 
+STASH : m01s00i024
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>relative_humidity</name>
+    <stash>m01s03i245</stash>
+    <description>
+Var : relative_humidity (Suface Level)
+STASH : m01s03i245
+Unit : (%)
+</description>
+  </var>
+  <var>
+    <name>specific_humidity</name>
+    <stash>m01s03i237</stash>
+    <description>
+Var : specific_humidity (Suface Level)
+STASH : m01s03i237
+Unit : (%)
+</description>
+  </var>
+  <var>
+    <name>air_temperature</name>
+    <stash>m01s03i236</stash>
+    <description>
+Var : air_temperature 
+STASH : m01s03i236
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>dew_point_temperature</name>
+    <stash>m01s03i250</stash>
+    <description>
+Var : dew_point_temperature 
+STASH : m01s03i250
+Unit : (K)</description>
+  </var>
+  <var>
+    <name>atmosphere_convective_available_potential_energy_wrt_surface</name>
+    <stash>m01s05i233</stash>
+    <description>
+Var : atmosphere_convective_available_potential_energy_wrt_surface 
+STASH : m01s05i233</description>
+  </var>
+  <var>
+    <name>atmosphere_convective_inhibition_wrt_surface</name>
+    <stash>m01s05i234</stash>
+    <description>
+    Var : atmosphere_convective_inhibition_wrt_surface 
+STASH : m01s05i234</description>
+  </var>
+  <var>
+    <name>high_type_cloud_area_fraction</name>
+    <stash>m01s09i205</stash>
+    <description>
+Var : high_type_cloud_area_fraction 
+STASH : m01s09i205
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>medium_type_cloud_area_fraction</name>
+    <stash>m01s09i204</stash>
+    <description>
+Var : medium_type_cloud_area_fraction 
+STASH : m01s09i204
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>low_type_cloud_area_fraction</name>
+    <stash>m01s09i203</stash>
+    <description>
+Var : low_type_cloud_area_fraction 
+STASH : m01s09i203
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>cloud_area_fraction_assuming_random_overlap</name>
+    <stash>m01s09i216</stash>
+    <description>
+Var : cloud_area_fraction_assuming_random_overlap 
+STASH : m01s09i216
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>cloud_area_fraction_assuming_maximum_random_overlap</name>
+    <stash>m01s09i217</stash>
+    <description>
+Var : cloud_area_fraction_assuming_maximum_random_overlap 
+STASH : m01s09i217
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>atmosphere_cloud_liquid_water_content</name>
+    <stash>m01s30i405</stash>
+    <description>
+Var : atmosphere_cloud_liquid_water_content 
+STASH : m01s30i405
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>atmosphere_cloud_ice_content</name>
+    <stash>m01s30i406</stash>
+    <description>
+Var : atmosphere_cloud_ice_content 
+STASH : m01s30i406
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>atmosphere_mass_content_of_water</name>
+    <stash>m01s30i404</stash>
+    <description>
+Var : atmosphere_mass_content_of_water 
+STASH : m01s30i404
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>atmosphere_mass_content_of_dust_dry_aerosol_particles</name>
+    <stash>m01s30i403</stash>
+    <description>
+    Var : atmosphere_mass_content_of_dust_dry_aerosol_particles 
+STASH : m01s30i403
+</description>
+  </var>
+  <var>
+    <name>atmosphere_precipitable_water_content</name>
+    <stash>None</stash>
+    <description>
+Var : atmosphere_precipitable_water_content
+
+STASH is None, because atmosphere_precipitable_water_content
+will be calculated by using formula =
++ atmosphere_mass_content_of_water
+- atmosphere_mass_content_of_dust_dry_aerosol_particles 
+- atmosphere_cloud_liquid_water_content 
+- atmosphere_cloud_ice_content
+
+Unit : (kg m-2)
+    </description>
+  </var>
+  <var>
+    <name>x_wind</name>
+    <stash>m01s03i225</stash>
+    <description>
+Var : x_wind (10 meter u-wind)
+STASH : m01s30i403
+Unit : (m s-1)
+</description>
+  </var>
+  <var>
+    <name>y_wind</name>
+    <stash>m01s03i226</stash>
+    <description>
+    Var : y_wind (10 meter v-wind)
+STASH : m01s03i226
+Unit : (m s-1)
+</description>
+  </var>
+  <var>
+    <name>visibility_in_air</name>
+    <stash>m01s03i247</stash>
+    <description>
+Var : visibility_in_air 
+STASH : m01s03i247
+</description>
+  </var>
+  <var>
+    <name>precipitation_amount</name>
+    <stash>m01s05i226</stash>
+    <description>
+Var : precipitation_amount 
+STASH : m01s05i226
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>stratiform_snowfall_amount</name>
+    <stash>m01s04i202</stash>
+    <description>
+Var : stratiform_snowfall_amount 
+STASH : m01s04i202
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>convective_snowfall_amount</name>
+    <stash>m01s05i202</stash>
+    <description>
+Var : convective_snowfall_amount 
+STASH : m01s05i202
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>stratiform_rainfall_amount</name>
+    <stash>m01s04i201</stash>
+    <description>
+Var : stratiform_rainfall_amount 
+STASH : m01s04i201
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>convective_rainfall_amount</name>
+    <stash>m01s05i201</stash>
+    <description>
+Var : convective_rainfall_amount 
+STASH : m01s05i201
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>rainfall_flux</name>
+    <stash>m01s05i214</stash>
+    <description>
+Var : rainfall_flux 
+STASH : m01s05i214
+Unit : (kg m-2 s-1)</description>
+  </var>
+  <var>
+    <name>snowfall_flux</name>
+    <stash>m01s05i215</stash>
+    <description>
+Var : snowfall_flux 
+STASH : m01s05i215
+Unit : (kg m-2 s-1)</description>
+  </var>
+  <var>
+    <name>precipitation_flux</name>
+    <stash>m01s05i216</stash>
+    <description>
+Var : precipitation_flux 
+STASH : m01s05i216
+Unit : (kg m-2 s-1)</description>
+  </var>
+  <var>
+    <name>fog_area_fraction</name>
+    <stash>m01s03i248</stash>
+    <description>
+Var : fog_area_fraction 
+STASH : m01s03i248
+Unit : (%)</description>
+  </var>
+  <var>
+    <name>toa_incoming_shortwave_flux</name>
+    <stash>m01s01i207</stash>
+    <description>
+Var : toa_incoming_shortwave_flux 
+STASH : m01s01i207
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>toa_outgoing_shortwave_flux</name>
+    <stash>m01s01i205</stash>
+    <description>
+Var : toa_outgoing_shortwave_flux 
+STASH : m01s01i205
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>toa_outgoing_shortwave_flux_assuming_clear_sky</name>
+    <stash>m01s01i209</stash>
+    <description>
+Var : toa_outgoing_shortwave_flux_assuming_clear_sky 
+STASH : m01s01i209
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>toa_outgoing_longwave_flux</name>
+    <stash>m01s02i205</stash>
+    <description>
+Var : toa_outgoing_longwave_flux 
+STASH : m01s02i205
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>toa_outgoing_longwave_flux_assuming_clear_sky</name>
+    <stash>m01s02i206</stash>
+    <description>
+Var : toa_outgoing_longwave_flux_assuming_clear_sky 
+STASH : m01s02i206
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_upward_latent_heat_flux</name>
+    <stash>m01s03i234</stash>
+    <description>
+Var : surface_upward_latent_heat_flux 
+STASH : m01s03i234
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_upward_sensible_heat_flux</name>
+    <stash>m01s03i217</stash>
+    <description>
+Var : surface_upward_sensible_heat_flux 
+STASH : m01s03i217
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_downwelling_shortwave_flux_in_air</name>
+    <stash>m01s01i235</stash>
+    <description>
+Var : surface_downwelling_shortwave_flux_in_air 
+STASH : m01s01i235
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_downwelling_longwave_flux</name>
+    <stash>m01s02i207</stash>
+    <description>
+Var : surface_downwelling_longwave_flux 
+STASH : m01s02i207
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_net_downward_longwave_flux</name>
+    <stash>m01s02i201</stash>
+    <description>
+Var : surface_net_downward_longwave_flux 
+STASH : m01s02i201
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_net_downward_shortwave_flux</name>
+    <stash>m01s01i202</stash>
+    <description>
+Var : surface_net_downward_shortwave_flux 
+STASH : m01s01i202
+Unit : (W m-2)</description>
+  </var>
+  <var>
+    <name>surface_upwelling_longwave_flux_in_air</name>
+    <stash>None</stash>
+    <description>
+Var : surface_upwelling_longwave_flux_in_air
+STASH is None, because it will calculated by using net and
+down longwave flux.
+Unit : (W m-2) 
+</description>
+  </var>
+  <var>
+    <name>surface_upwelling_shortwave_flux_in_air</name>
+    <stash>None</stash>
+    <description>
+Var : surface_upwelling_shortwave_flux_in_air
+STASH is None, because it will calculated by using net and
+down shortwave flux.
+Unit : (W m-2) 
+</description>
+  </var>
+  <var>
+    <name>atmosphere_boundary_layer_thickness</name>
+    <stash>m01s00i025</stash>
+    <description>
+Var : atmosphere_boundary_layer_thickness 
+STASH : m01s00i025
+</description>
+  </var>
+  <var>
+    <name>atmosphere_optical_thickness_due_to_dust_ambient_aerosol</name>
+    <stash>m01s02i422</stash>
+    <description>
+Var : atmosphere_optical_thickness_due_to_dust_ambient_aerosol 
+STASH : m01s02i422
+</description>
+  </var>
+  <var>
+    <name>moisture_content_of_soil_layer</name>
+    <stash>m01s08i223</stash>
+    <description>
+Var : moisture_content_of_soil_layer (four soil layers)
+STASH : m01s08i223
+Unit : (kg m-2)</description>
+  </var>
+  <var>
+    <name>soil_moisture_content</name>
+    <stash>m01s08i208</stash>
+    <description>
+Var : soil_moisture_content (single soil layer)
+STASH : m01s08i208
+Unit : (kg m-2) </description>
+  </var>
+  <var>
+    <name>volumetric_moisture_of_soil_layer</name>
+    <stash>m01s08i223</stash>
+    <description>
+Var : volumetric_moisture_of_soil_layer (four soil layers)
+STASH : m01s08i223
+Unit : (kg m-3)</description>
+  </var>
+  <var>
+    <name>volumetric_moisture_of_soil_layer</name>
+    <stash>m01s08i208</stash>
+    <description>
+Var : volumetric_moisture_of_soil_layer (single soil layer)
+STASH : m01s08i208
+Unit : (kg m-3)</description>
+  </var>
+  <var>
+    <name>soil_temperature</name>
+    <stash>m01s03i238</stash>
+    <description>
+Var : soil_temperature 
+STASH : m01s03i238
+four soil layers
+    Unit : (K)</description>
+  </var>
+  <var>
+    <name>sea_ice_area_fraction</name>
+    <stash>m01s00i031</stash>
+    <description>
+Var : sea_ice_area_fraction 
+STASH : m01s00i031
+Unit : (1)</description>
+  </var>
+  <var>
+    <name>sea_ice_thickness</name>
+    <stash>m01s00i032</stash>
+    <description>
+Var : sea_ice_thickness 
+STASH : m01s00i032
+Unit : (m)</description>
+  </var>
+  <var>
+    <name>liquid_water_content_of_surface_snow</name>
+    <stash>m01s00i023</stash>
+    <description>
+Var : liquid_water_content_of_surface_snow 
+STASH : m01s00i023
+</description>
+  </var>
+  <var>
+    <name>land_binary_mask</name>
+    <stash>m01s00i030</stash>
+    <description>
+Var : land_binary_mask 
+STASH : m01s00i030
+Unit : (1)</description>
+  </var>
+  <var>
+    <name>surface_altitude</name>
+    <stash>m01s00i033</stash>
+    <description>
+Var : surface_altitude 
+STASH : m01s00i033
+Unit : (m)
+this is orography which presents only in analysis 00 file.
+</description>
+  </var>  
+</varlist>

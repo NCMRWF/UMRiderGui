@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<bsubfiles>
+
+<analysis>
+	<file>
+	<name>anl_00_utc</name>
+	<fullpath>ncumeps_global_post_anl_00Z.sh </fullpath>
+	<description>
+This bash bsub script used to create ncum post production
+of analysis (i.e. forecast at 00Z as per EPS) at 00Z (grib2 files). 
+  </description>
+	<comment></comment>
+	</file>
+</analysis>
+
+<forecast>
+	<file>
+	<name>fcst_00_utc</name>
+	<fullpath>ncumeps_global_post_fcst_00Z.sh </fullpath>
+	<description>
+This bash bsub script used to create ncum post production
+of forecast at 00Z (grib2 files). 
+  </description>
+	<comment></comment>
+	</file>
+</forecast>
+
+</bsubfiles>

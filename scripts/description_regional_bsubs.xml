@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<bsubfiles>
+
+
+<forecast>
+	<file>
+	<name>fcst_00_utc</name>
+	<fullpath>ncum_global_post_fcst_00Z.sh</fullpath>
+	<description>
+This bash bsub script used to create ncum regional 
+post production of forecast at 00Z (grib2 files).       
+  </description>
+	<comment></comment>
+	</file>
+
+	
+</forecast>
+
+</bsubfiles>
